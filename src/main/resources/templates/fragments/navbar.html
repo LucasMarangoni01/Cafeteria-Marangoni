@@ -1,0 +1,41 @@
+<header th:fragment="navbar(currentPage)" class="site-header">
+    <nav class="navbar navbar-expand-lg container" aria-label="Navegação principal">
+        <a class="navbar-brand d-inline-flex align-items-center gap-2" th:href="@{/}" aria-label="Café Marangoni - página inicial">
+            <img src="/img/favicon.jpg" alt="" class="brand-logo" />
+            <span>Café Marangoni</span>
+        </a>
+
+        <div class="navbar-collapse">
+            <ul class="navbar-nav align-items-lg-center">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/}" th:classappend="${currentPage == 'home'} ? ' active' : null"
+                       th:attr="aria-current=${currentPage == 'home' ? 'page' : null}">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/#sobre}">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/produtos}" th:classappend="${currentPage == 'produtos'} ? ' active' : null"
+                       th:attr="aria-current=${currentPage == 'produtos' ? 'page' : null}">Cardápio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/pedidos}" th:classappend="${currentPage == 'pedidos'} ? ' active' : null"
+                       th:attr="aria-current=${currentPage == 'pedidos' ? 'page' : null}">Pedidos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/admin}" th:classappend="${currentPage == 'admin'} ? ' active' : null"
+                       th:attr="aria-current=${currentPage == 'admin' ? 'page' : null}">Administração</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/login}" th:classappend="${currentPage == 'login'} ? ' active' : null"
+                       th:attr="aria-current=${currentPage == 'login' ? 'page' : null}">Entrar</a>
+                </li>
+                <li class="nav-item ms-lg-2">
+                    <a class="btn btn-nav" th:href="@{/cadastro}"
+                       th:classappend="${currentPage == 'cadastro'} ? ' active' : null"
+                       th:attr="aria-current=${currentPage == 'cadastro' ? 'page' : null}">Criar conta</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
