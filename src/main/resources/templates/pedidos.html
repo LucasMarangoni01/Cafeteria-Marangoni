@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página de pedidos do Café Marangoni com acompanhamento do status dos pedidos do cliente.">
+    <title>Pedidos | Café Marangoni</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg container">
+            <a class="navbar-brand" href="index.html" aria-label="Café Marangoni">
+                <img src="../static/img/favicon.jpg" alt="Logo Café Marangoni" class="brand-logo">
+                <span>Café Marangoni</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav" aria-controls="menuNav" aria-expanded="false" aria-label="Abrir menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuNav">
+                <ul class="navbar-nav ms-auto">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html#sobre">Sobre</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="pedidos.html">Pedidos</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
+                    <li><a href="admin.html">Admin</a></li>
+                </ul>
+                <a href="login.html" class="btn btn-primary btn-nav">Sair</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container page-hero__content">
+                <div>
+                    <span class="page-hero__badge"><i class="fa-solid fa-box-open"></i> Bem-vindo(a)</span>
+                    <h1>Olá, Lucas!</h1>
+                    <p>Acompanhe seus pedidos em tempo real e veja o status do atendimento do seu café preferido.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section page-section--light">
+            <div class="container order-grid">
+                <div class="panel order-panel">
+                    <p class="eyebrow eyebrow--dark">Meus pedidos</p>
+                    <h2>Últimos pedidos</h2>
+
+                    <div class="order-list">
+                        <div class="order-item">
+                            <div class="order-item__info">
+                                <h3>Pedido #1048</h3>
+                                <span>2 Cappuccinos + Croissant</span><br>
+                                <small>Entrega em 25 minutos</small>
+                            </div>
+                            <span class="status-pill status-pill--process">Em atendimento</span>
+                        </div>
+
+                        <div class="order-item">
+                            <div class="order-item__info">
+                                <h3>Pedido #1038</h3>
+                                <span>Cold Brew + Brownie</span><br>
+                                <small>Pronto para retirada</small>
+                            </div>
+                            <span class="status-pill status-pill--done">Finalizado</span>
+                        </div>
+
+                        <div class="order-item">
+                            <div class="order-item__info">
+                                <h3>Pedido #1029</h3>
+                                <span>Latte + Torta de chocolate</span><br>
+                                <small>Entregue com sucesso</small>
+                            </div>
+                            <span class="status-pill status-pill--done">Finalizado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="panel summary-panel">
+                    <p class="eyebrow eyebrow--dark">Resumo</p>
+                    <h2>Detalhes do pedido</h2>
+
+                    <div class="summary-total">
+                        <div class="summary-line">
+                            <span>Subtotal</span>
+                            <strong>R$ 48,00</strong>
+                        </div>
+                        <div class="summary-line">
+                            <span>Entrega</span>
+                            <strong>R$ 8,00</strong>
+                        </div>
+                        <div class="summary-line">
+                            <span>Desconto</span>
+                            <strong>- R$ 5,00</strong>
+                        </div>
+                        <div class="summary-line">
+                            <span>Total</span>
+                            <strong>R$ 51,00</strong>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 1.5rem;">
+                        <a href="produtos.html" class="btn btn-primary" style="width: 100%;">Fazer novo pedido</a>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <a href="index.html" class="footer-brand">
+                    <img src="../static/img/favicon.jpg" alt="Logo Café Marangoni" class="brand-logo">
+                    <span>Café Marangoni</span>
+                </a>
+                <p>Cafeteria gourmet premium com café artesanal, doces delicados e atendimento acolhedor.</p>
+            </div>
+            <div>
+                <h3>Navegação</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="pedidos.html">Pedidos</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
+                    <li><a href="admin.html">Admin</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Contato</h3>
+                <ul>
+                    <li><a href="tel:11989053387">(11) 98905-3387</a></li>
+                    <li><a href="mailto:contato@cafemarangoni.com.br">contato@cafemarangoni.com.br</a></li>
+                    <li><a href="index.html#contato">Localização</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Café Marangoni. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

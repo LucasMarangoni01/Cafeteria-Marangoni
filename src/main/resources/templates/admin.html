@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Painel administrativo do Café Marangoni para acompanhamento de pedidos, faturamento e estoque.">
+    <title>Administração | Café Marangoni</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg container">
+            <a class="navbar-brand" href="index.html" aria-label="Café Marangoni">
+                <img src="../static/img/favicon.jpg" alt="Logo Café Marangoni" class="brand-logo">
+                <span>Café Marangoni</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav" aria-controls="menuNav" aria-expanded="false" aria-label="Abrir menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuNav">
+                <ul class="navbar-nav ms-auto">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="pedidos.html">Pedidos</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
+                    <li><a href="admin.html">Admin</a></li>
+                </ul>
+                <a href="login.html" class="btn btn-primary btn-nav">Sair</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container page-hero__content">
+                <div>
+                    <span class="page-hero__badge"><i class="fa-solid fa-chart-line"></i> Painel administrativo</span>
+                    <h1>Gestão do café em tempo real.</h1>
+                    <p>Monitore pedidos, controle do estoque e performance da operação do Café Marangoni com uma visão clara e moderna.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section page-section--light">
+            <div class="container">
+                <div class="admin-grid">
+                    <article class="admin-card panel">
+                        <span>Pedidos hoje</span>
+                        <strong>128</strong>
+                        <small>+18% em relação a ontem</small>
+                    </article>
+
+                    <article class="admin-card panel">
+                        <span>Faturamento</span>
+                        <strong>R$ 8.420</strong>
+                        <small>+12% no mês</small>
+                    </article>
+
+                    <article class="admin-card panel">
+                        <span>Em atendimento</span>
+                        <strong>24</strong>
+                        <small>8 aguardando retirada</small>
+                    </article>
+                </div>
+
+                <div class="admin-tabs">
+                    <button class="tab-btn active">Resumo</button>
+                    <button class="tab-btn">Pedidos</button>
+                    <button class="tab-btn">Estoque</button>
+                    <button class="tab-btn">Clientes</button>
+                </div>
+
+                <div class="panel order-panel">
+                    <p class="eyebrow eyebrow--dark">Últimos pedidos</p>
+                    <h2>Operação em andamento</h2>
+
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Pedido</th>
+                                <th>Cliente</th>
+                                <th>Produto</th>
+                                <th>Valor</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#1048</td>
+                                <td>Lucas M.</td>
+                                <td>2 Cappuccinos + Croissant</td>
+                                <td>R$ 48,00</td>
+                                <td><span class="status-pill status-pill--process">Em atendimento</span></td>
+                            </tr>
+                            <tr>
+                                <td>#1049</td>
+                                <td>Camila S.</td>
+                                <td>Latte + Brownie</td>
+                                <td>R$ 32,00</td>
+                                <td><span class="status-pill status-pill--done">Finalizado</span></td>
+                            </tr>
+                            <tr>
+                                <td>#1050</td>
+                                <td>Pedro R.</td>
+                                <td>Cold Brew + Torta</td>
+                                <td>R$ 41,50</td>
+                                <td><span class="status-pill status-pill--process">Em preparo</span></td>
+                            </tr>
+                            <tr>
+                                <td>#1051</td>
+                                <td>Ana L.</td>
+                                <td>Chocolate quente + Cookie</td>
+                                <td>R$ 29,90</td>
+                                <td><span class="status-pill status-pill--done">Pronto</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section page-section--soft">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="panel order-panel">
+                            <p class="eyebrow eyebrow--dark">Estoque</p>
+                            <h2>Itens críticos</h2>
+
+                            <div class="order-list">
+                                <div class="order-item">
+                                    <div class="order-item__info">
+                                        <h3>Grãos de café</h3>
+                                        <span>Estoque atual: 18 kg</span>
+                                    </div>
+                                    <span class="status-pill status-pill--process">Baixo</span>
+                                </div>
+
+                                <div class="order-item">
+                                    <div class="order-item__info">
+                                        <h3>Leite</h3>
+                                        <span>Estoque atual: 22 litros</span>
+                                    </div>
+                                    <span class="status-pill status-pill--done">Normal</span>
+                                </div>
+
+                                <div class="order-item">
+                                    <div class="order-item__info">
+                                        <h3>Farinha e padaria</h3>
+                                        <span>Estoque atual: 7 caixas</span>
+                                    </div>
+                                    <span class="status-pill status-pill--process">Em revisão</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="panel order-panel">
+                            <p class="eyebrow eyebrow--dark">Ações rápidas</p>
+                            <h2>Resumo operacional</h2>
+
+                            <div class="summary-total">
+                                <div class="summary-line">
+                                    <span>Pedidos realizados</span>
+                                    <strong>128</strong>
+                                </div>
+                                <div class="summary-line">
+                                    <span>Produtos atendidos</span>
+                                    <strong>94%</strong>
+                                </div>
+                                <div class="summary-line">
+                                    <span>Tempo médio de preparo</span>
+                                    <strong>14 min</strong>
+                                </div>
+                                <div class="summary-line">
+                                    <span>Clientes recorrentes</span>
+                                    <strong>64</strong>
+                                </div>
+                            </div>
+
+                            <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                                <a href="produtos.html" class="btn btn-primary">Atualizar cardápio</a>
+                                <a href="index.html" class="btn btn-secondary" style="background: rgba(138, 93, 62, 0.08); color: var(--primary); border: 1px solid rgba(138, 93, 62, 0.08);">Ver site</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <a href="index.html" class="footer-brand">
+                    <img src="../static/img/favicon.jpg" alt="Logo Café Marangoni" class="brand-logo">
+                    <span>Café Marangoni</span>
+                </a>
+                <p>Gestão premium para a cafeteria gourmet com atendimento, estoque e operação centralizados.</p>
+            </div>
+
+            <div>
+                <h3>Navegação</h3>
+                <ul>
+                    <li><a href="index.html">Página inicial</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="pedidos.html">Pedidos</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
+                    <li><a href="admin.html">Admin</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Suporte</h3>
+                <ul>
+                    <li><a href="tel:11989053387">(11) 98905-3387</a></li>
+                    <li><a href="mailto:suporte@cafemarangoni.com.br">suporte@cafemarangoni.com.br</a></li>
+                    <li><a href="#">Central de ajuda</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Café Marangoni. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
