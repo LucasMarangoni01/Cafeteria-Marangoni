@@ -1320,3 +1320,345 @@ a, button, .nav-link {
 :focus:not(:focus-visible) {
     outline: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CSS PARA A PAGINA "INDEX_ACESSO_PROJETO" */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #1a0e09;
+    --background-light: #2c1810;
+    --coffee: #8b5e3c;
+    --coffee-light: #c89b6d;
+    --cream: #f5eadc;
+    --text: #f8f1e8;
+    --text-muted: #b8a99c;
+    --border: rgba(255, 255, 255, 0.08);
+}
+
+body {
+    font-family: "Manrope", sans-serif;
+    background: var(--background);
+    color: var(--text);
+}
+
+.landing {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(139, 94, 60, 0.18),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #120905 0%,
+            #24120c 50%,
+            #120905 100%
+        );
+}
+
+.coffee-glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+
+    background: rgba(139, 94, 60, 0.08);
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    pointer-events: none;
+}
+
+.card {
+    position: relative;
+    width: min(100%, 620px);
+
+    padding: 55px 50px 40px;
+
+    text-align: center;
+
+    background: rgba(38, 21, 14, 0.72);
+
+    border: 1px solid var(--border);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+    backdrop-filter: blur(18px);
+
+    animation: cardAppear 0.8s ease forwards;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    font-size: 18px;
+    font-weight: 500;
+
+    color: var(--cream);
+}
+
+.logo strong {
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    margin-right: 5px;
+
+    border-radius: 50%;
+
+    color: var(--coffee-light);
+
+    background: rgba(200, 155, 109, 0.08);
+
+    border: 1px solid rgba(200, 155, 109, 0.15);
+}
+
+.divider {
+    width: 45px;
+    height: 1px;
+
+    margin: 30px auto;
+
+    background: var(--coffee-light);
+
+    opacity: 0.5;
+}
+
+.eyebrow {
+    margin-bottom: 14px;
+
+    color: var(--coffee-light);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+h1 {
+    margin-bottom: 20px;
+
+    color: var(--text);
+
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 700;
+
+    line-height: 1.12;
+    letter-spacing: -1.8px;
+}
+
+.description {
+    max-width: 470px;
+
+    margin: 0 auto 32px;
+
+    color: var(--text-muted);
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.access-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+    min-width: 260px;
+
+    padding: 15px 23px;
+
+    color: #24140c;
+    background: var(--cream);
+
+    border: 1px solid var(--cream);
+    border-radius: 12px;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.access-button i {
+    transition: transform 0.25s ease;
+}
+
+.access-button:hover {
+    color: #24140c;
+
+    background: #ffffff;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.access-button:hover i {
+    transform: translateX(5px);
+}
+
+.footer-text {
+    margin-top: 35px;
+
+    color: rgba(184, 169, 156, 0.6);
+
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: 0.3px;
+}
+
+.footer-text span {
+    margin: 0 7px;
+
+    color: var(--coffee-light);
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .landing {
+        padding: 20px;
+    }
+
+    .card {
+        padding: 45px 25px 32px;
+
+        border-radius: 22px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .access-button {
+        width: 100%;
+    }
+}
+
