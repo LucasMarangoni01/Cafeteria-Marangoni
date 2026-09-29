@@ -1,35 +1,34 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Acompanhe seus pedidos no Café Marangoni.">
     <title>Pedidos | Café Marangoni</title>
-    <link rel="icon" type="image/jpeg" href="./img/favicon.jpg">
+    <link rel="icon" type="image/jpeg" href="../static/img/favicon.jpg" th:href="@{/img/favicon.jpg}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
 </head>
 <body>
     <header class="site-header">
         <nav class="navbar navbar-expand-lg container" aria-label="Navegação principal">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-                <img src="./img/favicon.jpg" alt="Logo Café Marangoni" class="brand-logo">
+            <a class="navbar-brand d-inline-flex align-items-center gap-2" href="index.html">
+                <img src="../static/img/favicon.jpg" th:src="@{/img/favicon.jpg}" alt="Logo Café Marangoni" class="brand-logo">
                 <span>Café Marangoni</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Abrir menu">
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler" type="button" aria-controls="mainNavigation" aria-expanded="false" aria-label="Abrir menu" data-nav-toggle>
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
             </button>
-            <div class="collapse navbar-collapse" id="mainNavigation">
-                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <div class="navbar-collapse" id="mainNavigation">
+                <ul class="navbar-nav align-items-lg-center ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html#sobre">Sobre</a></li>
                     <li class="nav-item"><a class="nav-link" href="produtos.html">Cardápio</a></li>
                     <li class="nav-item"><a class="nav-link active" href="pedidos.html" aria-current="page">Pedidos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="admin.html">Administração</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.html">Entrar</a></li>
                     <li class="nav-item"><a class="btn btn-nav" href="cadastro.html">Criar conta</a></li>
                 </ul>
@@ -42,72 +41,88 @@
             <div class="container text-center">
                 <span class="orders-hero__badge"><i class="fa-solid fa-box-open"></i> Área do cliente</span>
                 <h1>Meus pedidos</h1>
-                <p>Acompanhe seus pedidos e consulte o histórico da sua cafeteria favorita.</p>
+                <p>Confira uma prévia da área do cliente e monte um pedido para demonstração.</p>
             </div>
         </section>
 
         <section class="orders-section container py-5">
+            <div class="customer-welcome" data-customer-dashboard>
+                <div>
+                    <span class="orders-eyebrow">Área do cliente</span>
+                    <h2>Olá, <span data-customer-name>visitante</span>.</h2>
+                </div>
+                <button type="button" data-demo-logout hidden>Sair da demonstração</button>
+            </div>
+
+            <p class="auth-demo-note mb-4" data-login-prompt>
+                Esta é uma prévia somente front-end. Entre ou crie um perfil de demonstração para ver o nome nesta tela.
+                Nenhuma conta ou autenticação real é criada.
+            </p>
+
             <div class="row g-4">
-                <div class="col-lg-8">
-                    <div class="orders-card">
+                <div class="col-lg-7">
+                    <section class="orders-card h-100" aria-labelledby="order-history-title">
                         <div class="section-heading d-flex justify-content-between align-items-end flex-wrap gap-2">
                             <div>
-                                <span class="orders-eyebrow">Histórico</span>
-                                <h2>Últimos pedidos</h2>
+                                <span class="orders-eyebrow">Neste navegador</span>
+                                <h2 id="order-history-title">Histórico de demonstração</h2>
                             </div>
-                            <span class="orders-count">4 pedidos</span>
+                            <span class="orders-count" data-order-count>0 pedidos</span>
                         </div>
-
-                        <div class="orders-list">
-                            <article class="order-item order-item--active">
-                                <div class="order-icon"><i class="fa-solid fa-receipt"></i></div>
-                                <div class="order-content">
-                                    <div class="order-heading"><h3>Pedido #1048</h3><span class="status status--processing">Em atendimento</span></div>
-                                    <p>2 Cappuccinos + Croissant de manteiga</p>
-                                    <small><i class="fa-regular fa-clock"></i> Entrega em aproximadamente 25 minutos</small>
-                                </div>
-                            </article>
-                            <article class="order-item">
-                                <div class="order-icon"><i class="fa-solid fa-receipt"></i></div>
-                                <div class="order-content">
-                                    <div class="order-heading"><h3>Pedido #1038</h3><span class="status status--done">Finalizado</span></div>
-                                    <p>Cold Brew + Brownie de chocolate</p>
-                                    <small><i class="fa-solid fa-check"></i> Pronto para retirada</small>
-                                </div>
-                            </article>
-                            <article class="order-item">
-                                <div class="order-icon"><i class="fa-solid fa-receipt"></i></div>
-                                <div class="order-content">
-                                    <div class="order-heading"><h3>Pedido #1029</h3><span class="status status--done">Finalizado</span></div>
-                                    <p>Latte Caramelo + Torta de chocolate</p>
-                                    <small><i class="fa-solid fa-check-double"></i> Entregue com sucesso</small>
-                                </div>
-                            </article>
-                            <article class="order-item">
-                                <div class="order-icon order-icon--muted"><i class="fa-solid fa-receipt"></i></div>
-                                <div class="order-content">
-                                    <div class="order-heading"><h3>Pedido #1015</h3><span class="status status--cancelled">Cancelado</span></div>
-                                    <p>Espresso Premium + Pão de queijo</p>
-                                    <small><i class="fa-solid fa-xmark"></i> Cancelado pelo cliente</small>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
+                        <div class="orders-list" id="orderHistory" aria-live="polite"></div>
+                    </section>
                 </div>
 
-                <div class="col-lg-4">
-                    <aside class="orders-card summary-card">
-                        <span class="orders-eyebrow">Resumo</span>
-                        <h2>Pedido atual</h2>
+                <div class="col-lg-5">
+                    <section class="orders-card" aria-labelledby="checkout-title">
+                        <span class="orders-eyebrow">Monte sua solicitação</span>
+                        <h2 id="checkout-title">Resumo do pedido</h2>
+                        <div class="order-cart-list" id="orderCart" aria-live="polite"></div>
                         <div class="summary-list">
-                            <div><span>Subtotal</span><strong>R$ 48,00</strong></div>
-                            <div><span>Entrega</span><strong>R$ 8,00</strong></div>
-                            <div><span>Desconto</span><strong class="discount">- R$ 5,00</strong></div>
-                            <div class="summary-total"><span>Total</span><strong>R$ 51,00</strong></div>
+                            <div><span>Subtotal</span><strong data-cart-subtotal>R$ 0,00</strong></div>
+                            <div><span>Entrega estimada</span><strong data-delivery-fee>R$ 0,00</strong></div>
+                            <div class="summary-total"><span>Total</span><strong data-cart-total>R$ 0,00</strong></div>
                         </div>
-                        <a class="btn btn-order w-100" href="produtos.html"><i class="fa-solid fa-plus"></i> Fazer novo pedido</a>
-                        <a class="btn btn-outline-order w-100 mt-2" href="produtos.html"><i class="fa-solid fa-rotate-right"></i> Repetir último pedido</a>
-                    </aside>
+
+                        <form class="order-checkout" data-checkout-form>
+                            <div class="form-group">
+                                <label for="customerName">Seu nome</label>
+                                <input id="customerName" name="customerName" autocomplete="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="customerPhone">Telefone para contato</label>
+                                <input id="customerPhone" name="customerPhone" type="tel" autocomplete="tel" placeholder="(00) 00000-0000" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="fulfillment">Como deseja receber?</label>
+                                <select id="fulfillment" name="fulfillment" required>
+                                    <option value="">Selecione uma opção</option>
+                                    <option value="balcao">Retirar no balcão</option>
+                                    <option value="mesa">Consumir em uma mesa</option>
+                                    <option value="entrega">Receber por delivery</option>
+                                </select>
+                            </div>
+                            <div class="form-group" data-table-field hidden>
+                                <label for="tableNumber">Número da mesa</label>
+                                <select id="tableNumber" name="tableNumber">
+                                    <option value="">Selecione sua mesa</option>
+                                    <option value="1">Mesa 1</option><option value="2">Mesa 2</option><option value="3">Mesa 3</option>
+                                    <option value="4">Mesa 4</option><option value="5">Mesa 5</option><option value="6">Mesa 6</option>
+                                    <option value="7">Mesa 7</option><option value="8">Mesa 8</option><option value="9">Mesa 9</option>
+                                    <option value="10">Mesa 10</option><option value="11">Mesa 11</option><option value="12">Mesa 12</option>
+                                    <option value="13">Mesa 13</option><option value="14">Mesa 14</option><option value="15">Mesa 15</option>
+                                </select>
+                            </div>
+                            <div class="form-group" data-address-field hidden>
+                                <label for="deliveryAddress">Endereço de entrega</label>
+                                <textarea id="deliveryAddress" name="deliveryAddress" autocomplete="street-address" placeholder="Rua, número, bairro e complemento"></textarea>
+                            </div>
+                            <button class="btn btn-order w-100" type="submit">Salvar prévia do pedido</button>
+                            <a class="btn btn-outline-order w-100" href="produtos.html">Escolher mais produtos</a>
+                        </form>
+                        <p class="auth-demo-note mt-3 mb-0">Pedido salvo apenas neste navegador para demonstração; não será enviado nem preparado pela cafeteria.</p>
+                        <div class="order-feedback mt-3" data-checkout-feedback hidden></div>
+                    </section>
                 </div>
             </div>
         </section>
@@ -115,12 +130,42 @@
 
     <footer class="site-footer">
         <div class="container footer-grid">
-            <div><a href="index.html" class="footer-brand"><img src="./img/favicon.jpg" alt="Logo Café Marangoni"><span>Café Marangoni</span></a><p>Cafeteria gourmet premium com café artesanal, doces delicados e atendimento acolhedor.</p></div>
-            <div><h3>Navegação</h3><ul><li><a href="index.html">Início</a></li><li><a href="produtos.html">Cardápio</a></li><li><a href="pedidos.html">Pedidos</a></li><li><a href="login.html">Entrar</a></li></ul></div>
-            <div><h3>Contato</h3><ul><li><a href="tel:11989053387">(11) 98905-3387</a></li><li><a href="mailto:contato@cafemarangoni.com.br">contato@cafemarangoni.com.br</a></li><li><a href="index.html#contato">Localização</a></li></ul></div>
+            <div>
+                <a class="footer-brand" href="index.html">
+                    <img class="brand-logo" src="../static/img/favicon.jpg" th:src="@{/img/favicon.jpg}" alt="">
+                    <span>Café Marangoni</span>
+                </a>
+                <p>Cafeteria gourmet premium com ambiente acolhedor, sabores artesanais e atendimento que encanta.</p>
+                <div class="social-list">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div>
+                <h3>Links rápidos</h3>
+                <ul>
+                    <li><a href="index.html#home">Início</a></li>
+                    <li><a href="index.html#sobre">Sobre</a></li>
+                    <li><a href="produtos.html">Cardápio</a></li>
+                    <li><a href="pedidos.html">Pedidos</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Informações</h3>
+                <ul>
+                    <li><a href="tel:11989053387">(11) 98905-3387</a></li>
+                    <li><a href="mailto:lucas.marangoni2008@gmail.com">lucas.marangoni2008@gmail.com</a></li>
+                    <li>Seg-Sex: 6h30 - 19h</li>
+                    <li>Sáb-Dom: 8h - 18h</li>
+                </ul>
+            </div>
         </div>
-        <div class="footer-bottom"><p>&copy; 2026 Café Marangoni. Todos os direitos reservados.</p></div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Café Marangoni. Todos os direitos reservados.</p>
+        </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/script.js" th:src="@{/js/script.js}"></script>
 </body>
 </html>

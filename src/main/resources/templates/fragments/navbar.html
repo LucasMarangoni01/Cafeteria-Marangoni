@@ -5,33 +5,32 @@
             <span>Café Marangoni</span>
         </a>
 
-        <div class="navbar-collapse">
-            <ul class="navbar-nav align-items-lg-center">
+        <button class="navbar-toggler" type="button" aria-controls="mainNavigation" aria-expanded="false" aria-label="Abrir menu" data-nav-toggle>
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+        <div class="navbar-collapse" id="mainNavigation">
+            <ul class="navbar-nav align-items-lg-center ms-auto">
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/}" th:classappend="${currentPage == 'home'} ? ' active' : null"
-                       th:attr="aria-current=${currentPage == 'home' ? 'page' : null}">Início</a>
+                       href="index.html" th:attr="aria-current=${currentPage == 'home' ? 'page' : null}">Início</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/#sobre}">Sobre</a>
+                    <a class="nav-link" href="index.html#sobre" th:href="@{/#sobre}">Sobre</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/produtos}" th:classappend="${currentPage == 'produtos'} ? ' active' : null"
+                    <a class="nav-link" href="produtos.html" th:href="@{/produtos}" th:classappend="${currentPage == 'produtos'} ? ' active' : null"
                        th:attr="aria-current=${currentPage == 'produtos' ? 'page' : null}">Cardápio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/pedidos}" th:classappend="${currentPage == 'pedidos'} ? ' active' : null"
+                    <a class="nav-link" href="pedidos.html" th:href="@{/pedidos}" th:classappend="${currentPage == 'pedidos'} ? ' active' : null"
                        th:attr="aria-current=${currentPage == 'pedidos' ? 'page' : null}">Pedidos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/admin}" th:classappend="${currentPage == 'admin'} ? ' active' : null"
-                       th:attr="aria-current=${currentPage == 'admin' ? 'page' : null}">Administração</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/login}" th:classappend="${currentPage == 'login'} ? ' active' : null"
+                    <a class="nav-link" href="login.html" th:href="@{/login}" th:classappend="${currentPage == 'login'} ? ' active' : null"
                        th:attr="aria-current=${currentPage == 'login' ? 'page' : null}">Entrar</a>
                 </li>
                 <li class="nav-item ms-lg-2">
-                    <a class="btn btn-nav" th:href="@{/cadastro}"
+                    <a class="btn btn-nav" href="cadastro.html" th:href="@{/cadastro}"
                        th:classappend="${currentPage == 'cadastro'} ? ' active' : null"
                        th:attr="aria-current=${currentPage == 'cadastro' ? 'page' : null}">Criar conta</a>
                 </li>
