@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,34 +8,40 @@
     <meta name="author" content="Lucas Marangoni, 11989053387, lucas.marangoni2008@gmail.com" />
     <meta name="theme-color" content="#2c1810" />
     <title>Café Marangoni | Cafeteria Gourmet Premium</title>
-    <link rel="icon" type="/jpeg" th:href="@{/img/favicon.jpg}" />
+    <link rel="icon" type="image/jpeg" href="./img/favicon.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/style.css" />
 </head>
 <body>
-    <header th:replace="~{fragments/navbar :: navbar('home')}" class="site-header">
+    <header class="site-header">
         <nav class="navbar navbar-expand-lg container" aria-label="Navegação principal">
             <a class="navbar-brand d-inline-flex align-items-center gap-2" href="index.html" aria-label="Café Marangoni - página inicial">
-                <img src="../static/img/favicon.jpg" alt="" class="brand-logo" />
+                <img src="../static/img/favicon.jpg" alt="Logo Café Marangoni" class="brand-logo" />
                 <span>Café Marangoni</span>
             </a>
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Início</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html#sobre">Sobre</a></li>
-                <li class="nav-item"><a class="nav-link" href="produtos.html">Cardápio</a></li>
-                <li class="nav-item"><a class="nav-link" href="pedidos.html">Pedidos</a></li>
-                <li class="nav-item"><a class="nav-link" href="admin.html">Administração</a></li>
-                <li class="nav-item"><a class="nav-link" href="login.html">Entrar</a></li>
-                <li class="nav-item"><a class="btn btn-nav" href="cadastro.html">Criar conta</a></li>
-            </ul>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="produtos.html">Cardápio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pedidos.html">Pedidos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="admin.html">Administração</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Entrar</a></li>
+                    <li class="nav-item"><a class="btn btn-nav" href="cadastro.html">Criar conta</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
     <main>
+        <!-- HERO SECTION -->
         <section class="hero" id="home">
             <div class="hero__overlay"></div>
             <div class="container hero__content">
@@ -100,6 +106,7 @@
             </div>
         </section>
 
+        <!-- HIGHLIGHTS SECTION -->
         <section class="highlights-strip">
             <div class="container highlights-strip__grid">
                 <article class="highlight-item">
@@ -128,12 +135,14 @@
             </div>
         </section>
 
+        <!-- ABOUT SECTION -->
         <section class="about" id="sobre">
             <div class="container about__grid">
                 <div class="about__media">
-                                            <video autoplay muted loop playsinline aria-label="Vídeo do ambiente premium da cafeteria">
-                            <source src="../static/video/video_preparacao_cafe_gourmet.mp4" type="video/mp4" />
-                        </video>
+                    <video autoplay muted loop playsinline aria-label="Vídeo do ambiente premium da cafeteria">
+                        <source src="../static/video/video_preparacao_cafe_gourmet.mp4" type="video/mp4" />
+                        Seu navegador não suporta o elemento de vídeo.
+                    </video>
                     <div class="about__badge">
                         <span>Mais de</span>
                         <strong>10 anos</strong>
@@ -172,6 +181,7 @@
             </div>
         </section>
 
+        <!-- FEATURES SECTION -->
         <section class="features">
             <div class="container">
                 <div class="section-heading">
@@ -207,6 +217,7 @@
             </div>
         </section>
 
+        <!-- MENU SECTION -->
         <section class="menu" id="cardapio">
             <div class="container">
                 <div class="section-heading">
@@ -300,6 +311,7 @@
             </div>
         </section>
 
+        <!-- CTA BANNER -->
         <section class="cta-banner">
             <div class="container cta-banner__content">
                 <div>
@@ -310,6 +322,7 @@
             </div>
         </section>
 
+        <!-- CONTACT SECTION -->
         <section class="contact" id="contato">
             <div class="container contact__grid">
                 <div class="contact-card">
@@ -346,7 +359,7 @@
                     <h2>Encontre a nossa cafeteria</h2>
                     <iframe
                         src="https://www.google.com/maps?q=R.%20Pedro%20Lara%20Pinto%2C%20355%20-%20Nova%20Mairinque%2C%20Mairinque%20-%20SP%2C%2018120-000&z=15&output=embed"
-                        allowfullscreen
+                        allowfullscreen=""
                         loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"
                         title="Mapa da localização da cafeteria">
@@ -356,11 +369,12 @@
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="container footer-grid">
             <div>
                 <div class="footer-brand">
-                    <img class="brand__logo" src="../static//img/favicon.jpg" alt="Logo Café Marangoni" />
+                    <img class="brand__logo" src="../static/img/favicon.jpg" alt="Logo Café Marangoni" />
                     <span>Café Marangoni</span>
                 </div>
                 <p>
