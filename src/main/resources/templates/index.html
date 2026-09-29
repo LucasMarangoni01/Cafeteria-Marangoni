@@ -61,7 +61,7 @@
 
                 <div class="hero__visual">
                     <div class="hero__frame">
-                        <div id="heroCarousel" class="carousel slide hero-carousel" role="region" aria-label="Fotos da cafeteria">
+                        <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel" data-bs-interval="5000" role="region" aria-label="Fotos da cafeteria">
                             <div class="carousel-indicators">
                                 <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Mostrar foto 1"></button>
                                 <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Mostrar foto 2"></button>
@@ -69,15 +69,21 @@
                             </div>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="..static/img/imagem_representacao_Latte_Caramelo.jpg" alt="Latte de caramelo servido na cafeteria" />
+                                    <img th:src="@{/img/imagem_representacao_Latte_Caramelo.jpg}" alt="Latte de caramelo servido na cafeteria" class="d-block w-100" />
                                 </div>
                                 <div class="carousel-item">
-                                    <img th:src="@{/img/imagem_representacao_Cappuccino_Gourmet.jpg}" alt="Cappuccino gourmet servido na cafeteria" />
+                                    <img th:src="@{/img/imagem_representacao_Cappuccino_Gourmet.jpg}" alt="Cappuccino gourmet servido na cafeteria" class="d-block w-100" />
                                 </div>
                                 <div class="carousel-item">
-                                    <img th:src="@{/img/imagem1.jpg}" alt="Café acompanhado de pão de queijo" />
+                                    <img th:src="@{/img/imagem1.jpg}" alt="Café acompanhado de pão de queijo" class="d-block w-100" />
                                 </div>
                             </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" aria-label="Foto anterior">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" aria-label="Próxima foto">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            </button>
                         </div>
                         <div class="floating-card floating-card--top">
                             <strong>Especial da casa</strong>
@@ -394,70 +400,5 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const carouselElement = document.querySelector('#heroCarousel');
-        if (carouselElement) {
-            const slides = Array.from(carouselElement.querySelectorAll('.carousel-item'));
-            const indicators = Array.from(carouselElement.querySelectorAll('.carousel-indicators button'));
-            const bootstrapCarousel = window.bootstrap?.Carousel;
-
-            if (bootstrapCarousel) {
-                const carousel = bootstrapCarousel.getOrCreateInstance(carouselElement, {
-                    interval: false,
-                    pause: false,
-                    wrap: true
-                });
-                window.setInterval(() => carousel.next(), 5000);
-            } else if (slides.length > 1) {
-                let activeIndex = slides.findIndex((slide) => slide.classList.contains('active'));
-                if (activeIndex < 0) {
-                    activeIndex = 0;
-                }
-
-                const showSlide = (index) => {
-                    if (index < 0 || index >= slides.length) {
-                        return;
-                    }
-
-                    slides.forEach((slide, slideIndex) => {
-                        const isActive = slideIndex === index;
-                        slide.classList.toggle('active', isActive);
-                        indicators[slideIndex].classList.toggle('active', isActive);
-                        if (isActive) {
-                            indicators[slideIndex].setAttribute('aria-current', 'true');
-                        } else {
-                            indicators[slideIndex].removeAttribute('aria-current');
-                        }
-                    });
-                    activeIndex = index;
-                };
-
-                indicators.forEach((indicator) => {
-                    indicator.addEventListener('click', () => {
-                        const index = Number(indicator.getAttribute('data-bs-slide-to'));
-                        if (Number.isInteger(index)) {
-                            showSlide(index);
-                        }
-                    });
-                });
-
-                window.setInterval(() => {
-                    showSlide((activeIndex + 1) % slides.length);
-                }, 5000);
-            }
-        }
-
-        document.querySelectorAll('a[href^="#"]').forEach((link) => {
-            link.addEventListener('click', function (event) {
-                const targetId = this.getAttribute('href');
-                const target = document.querySelector(targetId);
-
-                if (target) {
-                    event.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-    </script>
 </body>
 </html>
