@@ -14,13 +14,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
 </head>
 <body>
     <header th:replace="~{fragments/navbar :: navbar('home')}" class="site-header">
         <nav class="navbar navbar-expand-lg container" aria-label="Navegação principal">
             <a class="navbar-brand d-inline-flex align-items-center gap-2" href="index.html" aria-label="Café Marangoni - página inicial">
-                <img src="../static/img/favicon.jpg" alt="" class="brand-logo" />
+                <img th:src="@{/img/favicon.jpg}" alt="" class="brand-logo" />
                 <span>Café Marangoni</span>
             </a>
             <ul class="navbar-nav">
@@ -131,9 +131,9 @@
         <section class="about" id="sobre">
             <div class="container about__grid">
                 <div class="about__media">
-                                            <video autoplay muted loop playsinline aria-label="Vídeo do ambiente premium da cafeteria">
-                            <source src="../static/video/video_preparacao_cafe_gourmet.mp4" type="video/mp4" />
-                        </video>
+                    <video autoplay muted loop playsinline aria-label="Vídeo do ambiente premium da cafeteria">
+                        <source th:src="@{/video/video_preparacao_cafe_gourmet.mp4}" type="video/mp4" />
+                    </video>
                     <div class="about__badge">
                         <span>Mais de</span>
                         <strong>10 anos</strong>
@@ -360,7 +360,7 @@
         <div class="container footer-grid">
             <div>
                 <div class="footer-brand">
-                    <img class="brand__logo" src="/img/favicon.jpg" alt="Logo Café Marangoni" />
+                    <img class="brand__logo" th:src="@{/img/favicon.jpg}" alt="Logo Café Marangoni" />
                     <span>Café Marangoni</span>
                 </div>
                 <p>
