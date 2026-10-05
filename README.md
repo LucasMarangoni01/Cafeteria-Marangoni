@@ -1,32 +1,50 @@
-# Cafeteria Marangoni
+# Café Marangoni
 
-Este projeto é uma aplicação web de cafeteria desenvolvida com Spring Boot, Thymeleaf e front-end em HTML/CSS/JavaScript.
+O Café Marangoni é um projeto de cafeteria pensado para apresentar uma marca elegante, acolhedora e moderna, com foco em uma experiência de visita agradável para clientes.
 
-## Documentação de contexto
-A documentação completa do projeto, incluindo arquitetura, estrutura de arquivos, fluxo do cardápio, imagens e dicas de manutenção para IA, está em:
+## Sobre o projeto
+A ideia central do projeto é criar uma identidade visual para a cafeteria, trazendo uma proposta de ambiente premium, com foco em cafés especiais, receitas artesanais, refeições leves e uma experiência de atendimento com atenção ao cliente.
 
-- [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md)
+A estrutura do site foi organizada para transmitir a atmosfera da marca, desde a página inicial até o cardápio e as páginas de pedido.
 
-## Objetivo do projeto
-O sistema foi pensado como uma vitrine e protótipo de atendimento para a cafeteria Café Marangoni, com:
-- página inicial institucional
-- catálogo de produtos
-- filtros por categoria
-- carrinho de pedido em demonstração
-- cadastro/login local
-- painel administrativo de demonstração
+## Objetivo
+O projeto busca apresentar a cafeteria como um espaço de pausa, sabor e conforto, além de oferecer uma navegação clara para:
+- conhecer a marca
+- explorar o cardápio
+- escolher itens favoritos
+- realizar um pedido de demonstração
+- acompanhar a experiência de compra de forma visual
 
-## Como executar
-```bash
-./mvnw spring-boot:run
-```
+## Visão da experiência
+A proposta da interface é transmitir:
+- ambiente acolhedor
+- qualidade dos produtos
+- sabor artesanal
+- organização visual
+- simplicidade de uso
 
-Ou no Windows:
+As páginas foram criadas para manter uma linguagem visual consistente, com foco em conforto visual, destaque para itens de café e uma apresentação refinada dos produtos.
 
-```bash
-mvnw.cmd spring-boot:run
-```
+## Conteúdo do site
+O projeto apresenta diferentes partes:
+- página inicial com apresentação da cafeteria
+- área de destaque da marca e proposta
+- cardápio completo com categorias de produtos
+- itens de bebida, padaria, lanches, sobremesas e opções saudáveis
+- formulário de pedido em demonstração
+- área de login e cadastro
+- visão administrativa demonstrativa
 
-Acesse:
-- http://localhost:8080
+## Público alvo
+O projeto é voltado para clientes que procuram:
+- uma cafeteria com ambiente sofisticado
+- opções de café e receitas de qualidade
+- uma experiência de compra simples e agradável
+- uma marca com identidade visual forte
+
+## Propósito geral
+O Café Marangoni funciona como uma vitrine digital da marca, demonstrando como a cafeteria pode ser apresentada de forma atrativa, funcional e memorável para o cliente.
+
+## Observação
+Este README foi escrito com foco na proposta do projeto em si, sem aprofundamento técnico ou de desenvolvimento.
 
