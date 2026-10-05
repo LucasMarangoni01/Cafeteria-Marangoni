@@ -1,127 +1,168 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Produtos gourmet do Café Marangoni: café, sobremesas, padaria e mais opções premium para balcão, mesas e delivery.">
-    <title>Produtos | Café Marangoni</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Conheça o cardápio do Café Marangoni: cafés artesanais, bebidas geladas e itens de padaria preparados com cuidado.">
+    <meta name="theme-color" content="#27170f">
+    <title>Cardápio | Café Marangoni</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../static/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
 </head>
-
-<body>
-    <header class="site-header">
-        <nav class="navbar navbar-expand-lg container">
-            <a class="navbar-brand" href="index.html" aria-label="Café Marangoni">
-                <img src="/img/favicon.jpg" alt="Logo Café Marangoni" class="brand-logo">
+<body class="products-page">
+    <header th:replace="~{fragments/navbar :: navbar('produtos')}" class="site-header">
+        <nav class="navbar navbar-expand-lg container" aria-label="Navegação principal">
+            <a class="navbar-brand d-inline-flex align-items-center gap-2" href="index.html" aria-label="Café Marangoni - página inicial">
+                <img src="../static/img/favicon.jpg" alt="" class="brand-logo">
                 <span>Café Marangoni</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav" aria-controls="menuNav" aria-expanded="false" aria-label="Abrir menu">
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler" type="button" aria-controls="mainNavigation" aria-expanded="false" aria-label="Abrir menu" data-nav-toggle>
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
             </button>
-            <div class="collapse navbar-collapse" id="menuNav">
-                <ul class="navbar-nav ms-auto">
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="index.html#sobre">Sobre</a></li>
-                    <li><a href="produtos.html">Produtos</a></li>
-                    <li><a href="pedidos.html">Pedidos</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="cadastro.html">Cadastro</a></li>
-                    <li><a href="admin.html">Admin</a></li>
-                </ul>
-                <a href="login.html" class="btn btn-primary btn-nav">Entrar</a>
+            <div class="navbar-collapse" id="mainNavigation">
+            <ul class="navbar-nav align-items-lg-center ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#sobre">Sobre</a></li>
+                <li class="nav-item"><a class="nav-link active" href="produtos.html" aria-current="page">Cardápio</a></li>
+                <li class="nav-item"><a class="nav-link" href="pedidos.html">Pedidos</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html">Entrar</a></li>
+                <li class="nav-item"><a class="btn btn-nav" href="cadastro.html">Criar conta</a></li>
+            </ul>
             </div>
         </nav>
     </header>
 
-    <main>
-        <section class="page-hero">
-            <div class="container page-hero__content">
-                <div>
-                    <span class="page-hero__badge"><i class="fa-solid fa-mug-hot"></i> Cardápio premium</span>
-                    <h1>Produtos selecionados para cada momento.</h1>
-                    <p>Descubra bebidas artesanais, sobremesas e opções especiais pensadas para atendimento no balcão, nas mesas e delivery.</p>
+    <main data-asset-root="../static/img/" th:data-asset-root="@{/img/}">
+        <section class="catalog-hero">
+            <div class="container py-5 py-lg-6">
+                <div class="row align-items-center g-4 g-lg-5">
+                    <div class="col-lg-8">
+                        <span class="catalog-eyebrow"><i class="fa-solid fa-mug-hot me-2" aria-hidden="true"></i>Feito para a sua pausa</span>
+                        <h1 class="catalog-hero__title">Seu próximo favorito está no cardápio.</h1>
+                        <p class="catalog-hero__text">Explore bebidas, receitas de padaria, lanches, sobremesas, opções saudáveis e produtos para levar. Escolha seus favoritos para montar um pedido de demonstração.</p>
+                        <div class="d-flex flex-wrap gap-3 mt-4">
+                            <a class="btn btn-catalog-primary" href="#categorias">Explorar o cardápio</a>
+                            <a class="btn btn-catalog-secondary" href="index.html#contato">Visitar a cafeteria</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <aside class="catalog-note">
+                            <span class="catalog-note__icon"><i class="fa-solid fa-seedling" aria-hidden="true"></i></span>
+                            <div>
+                                <strong>Escolha como aproveitar</strong>
+                                <p>Atendimento no balcão, em uma das 15 mesas ou para entrega.</p>
+                                <p class="cart-status mt-3 mb-0">
+                                    <span data-cart-count>0 itens</span>
+                                    <a class="btn btn-catalog-secondary btn-sm" href="pedidos.html">Ver pedido</a>
+                                </p>
+                                <span class="visually-hidden" role="status" data-cart-status></span>
+                            </div>
+                        </aside>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="page-section page-section--light">
+        <section class="catalog-section py-5 py-lg-6" id="destaques" aria-labelledby="featured-title">
             <div class="container">
-                <div class="section-heading">
-                    <p class="eyebrow">Menu gourmet</p>
-                    <h2>Escolhas do dia para surpreender seu paladar.</h2>
+                <div class="row align-items-end g-3 mb-4 mb-lg-5">
+                    <div class="col-lg-8">
+                        <span class="catalog-section__eyebrow">Escolhas da casa</span>
+                        <h2 class="catalog-section__title" id="featured-title">Destaques do nosso cardápio</h2>
+                        <p class="catalog-section__intro mb-0">Uma seleção de bebidas e receitas para começar sua próxima visita.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a class="catalog-text-link" href="#categorias">Ver todas as categorias <i class="fa-solid fa-arrow-down ms-1" aria-hidden="true"></i></a>
+                    </div>
                 </div>
 
-                <div class="product-grid">
-                    <article class="panel product-card">
-                        <img src="../static/img/imagem_representacao_Cappuccino_Gourmet.jpg" alt="Cappuccino gourmet">
-                        <div class="product-card__body">
-                            <h3>Cappuccino Gourmet</h3>
-                            <p>Espuma cremosa, café intenso e aroma de cacau com dose elegante de leite vaporizado.</p>
-                            <div class="product-card__meta">
-                                <span class="price-tag">R$ 18,90</span>
-                                <a href="login.html" class="btn btn-primary">Selecionar</a>
+                <div class="row g-4">
+                    <div class="col-md-6 col-xl-4">
+                        <article class="card catalog-product h-100">
+                            <div class="catalog-product__image-wrap">
+                                <img class="catalog-product__image" src="../static/img/imagem_representacao_Cappuccino_Gourmet.jpg" th:src="@{/img/imagem_representacao_Cappuccino_Gourmet.jpg}" alt="Cappuccino gourmet com espuma cremosa e cacau" loading="lazy">
+                                <span class="catalog-product__badge">Favorito da casa</span>
                             </div>
-                        </div>
-                    </article>
+                            <div class="card-body d-flex flex-column p-4">
+                                <span class="catalog-product__type">Bebida quente</span>
+                                <h3 class="card-title catalog-product__title">Cappuccino Gourmet</h3>
+                                <p class="card-text catalog-product__description">Espuma cremosa, café intenso e aroma de cacau com leite vaporizado.</p>
+                                <div class="catalog-product__footer mt-auto">
+                                    <span class="catalog-product__price">R$ 18,90</span>
+                                    <a href="#categorias" class="btn btn-catalog-order">Ver opções <span class="visually-hidden">de Cappuccino Gourmet</span></a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
 
-                    <article class="panel product-card">
-                        <img src="../static/img/imagem_representacao_Cold_Brew.jpg" alt="Cold brew">
-                        <div class="product-card__body">
-                            <h3>Cold Brew</h3>
-                            <p>Refrescante, equilibrado e com perfil suave para quem gosta de café gelado premium.</p>
-                            <div class="product-card__meta">
-                                <span class="price-tag">R$ 16,50</span>
-                                <a href="login.html" class="btn btn-primary">Selecionar</a>
+                    <div class="col-md-6 col-xl-4">
+                        <article class="card catalog-product h-100">
+                            <div class="catalog-product__image-wrap">
+                                <img class="catalog-product__image" src="../static/img/imagem_representacao_Cold_Brew.jpg" th:src="@{/img/imagem_representacao_Cold_Brew.jpg}" alt="Cold brew gelado servido com gelo" loading="lazy">
+                                <span class="catalog-product__badge">Refrescante</span>
                             </div>
-                        </div>
-                    </article>
+                            <div class="card-body d-flex flex-column p-4">
+                                <span class="catalog-product__type">Bebida gelada</span>
+                                <h3 class="card-title catalog-product__title">Cold Brew</h3>
+                                <p class="card-text catalog-product__description">Café extraído a frio, refrescante e equilibrado, com perfil suave.</p>
+                                <div class="catalog-product__footer mt-auto">
+                                    <span class="catalog-product__price">R$ 16,50</span>
+                                    <a href="#categorias" class="btn btn-catalog-order">Ver opções <span class="visually-hidden">de Cold Brew</span></a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
 
-                    <article class="panel product-card">
-                        <img src="../static/img/imagem_representacao_Croissant_Manteiga.jpg" alt="Croissant e padaria">
-                        <div class="product-card__body">
-                            <h3>Croissant Manteiga</h3>
-                            <p>Camadas crocantes e viennoiserie artesanal com sabor leve e textura irresistível.</p>
-                            <div class="product-card__meta">
-                                <span class="price-tag">R$ 12,00</span>
-                                <a href="login.html" class="btn btn-primary">Selecionar</a>
+                    <div class="col-md-6 col-xl-4">
+                        <article class="card catalog-product h-100">
+                            <div class="catalog-product__image-wrap">
+                                <img class="catalog-product__image" src="../static/img/imagem_representacao_Croissant_Manteiga.jpg" th:src="@{/img/imagem_representacao_Croissant_Manteiga.jpg}" alt="Croissants de manteiga dourados e folhados" loading="lazy">
+                                <span class="catalog-product__badge">Feito com cuidado</span>
                             </div>
-                        </div>
-                    </article>
+                            <div class="card-body d-flex flex-column p-4">
+                                <span class="catalog-product__type">Padaria artesanal</span>
+                                <h3 class="card-title catalog-product__title">Croissant de Manteiga</h3>
+                                <p class="card-text catalog-product__description">Massa folhada em camadas delicadas, assada até ficar dourada e crocante.</p>
+                                <div class="catalog-product__footer mt-auto">
+                                    <span class="catalog-product__price">R$ 12,00</span>
+                                    <a href="#categorias" class="btn btn-catalog-order">Ver opções <span class="visually-hidden">de Croissant de Manteiga</span></a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="page-section page-section--soft">
+        <section class="catalog-categories py-5 py-lg-6" id="categorias" aria-labelledby="categories-title">
             <div class="container">
-                <div class="category-block panel">
-                    <h2>Bebidas quentes</h2>
-                    <ul class="category-list">
-                        <li>Cappuccino</li>
-                        <li>Latte</li>
-                        <li>Café expresso</li>
-                    </ul>
+                <div class="text-center mb-4 mb-lg-5">
+                    <span class="catalog-section__eyebrow">Cardápio completo</span>
+                    <h2 class="catalog-section__title" id="categories-title">Encontre o que combina com a sua pausa</h2>
                 </div>
+                <nav class="catalog-categories-nav" id="catalogCategoryLinks" aria-label="Filtrar produtos por categoria"></nav>
+                <p class="catalog-result-count" data-catalog-result-count aria-live="polite">21 produtos em todas as categorias</p>
+                <div class="catalog-collection" id="catalogCollection" aria-live="polite"></div>
+            </div>
+        </section>
 
-                <div class="category-block panel">
-                    <h2>Bebidas geladas</h2>
-                    <ul class="category-list">
-                        <li>Cold Brew</li>
-                        <li>Frappé</li>
-                        <li>Iced Coffee</li>
-                    </ul>
-                </div>
-
-                <div class="category-block panel">
-                    <h2>Padaria e confeitaria</h2>
-                    <ul class="category-list">
-                        <li>Croissant</li>
-                        <li>Pão de queijo</li>
-                        <li>Brownie</li>
-                    </ul>
+        <section class="catalog-cta py-5">
+            <div class="container">
+                <div class="catalog-cta__panel p-4 p-lg-5">
+                    <div class="row align-items-center g-3">
+                        <div class="col-lg-8">
+                            <h2 class="catalog-cta__title">Bateu vontade?</h2>
+                            <p class="catalog-cta__text mb-0">Faça seu pedido ou venha aproveitar um café com a gente.</p>
+                        </div>
+                        <div class="col-lg-4 text-lg-end">
+                            <a href="login.html" th:href="@{/login}" class="btn btn-catalog-primary">Fazer meu pedido</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -130,38 +171,42 @@
     <footer class="site-footer">
         <div class="container footer-grid">
             <div>
-                <a href="index.html" class="footer-brand">
-                    <img src="/img/favicon.jpg" alt="Logo Café Marangoni" class="brand-logo">
+                <a class="footer-brand" href="index.html" th:href="@{/}">
+                    <img class="brand-logo" src="../static/img/favicon.jpg" th:src="@{/img/favicon.jpg}" alt="">
                     <span>Café Marangoni</span>
                 </a>
-                <p>Cafeteria gourmet premium com café artesanal, doces delicados e atendimento acolhedor.</p>
+                <p>Cafeteria gourmet premium com ambiente acolhedor, sabores artesanais e atendimento que encanta.</p>
+                <div class="social-list">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
             </div>
             <div>
-                <h3>Navegação</h3>
+                <h3>Links rápidos</h3>
                 <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="index.html#home">Início</a></li>
+                    <li><a href="index.html#sobre">Sobre</a></li>
+                    <li><a href="produtos.html">Cardápio</a></li>
                     <li><a href="pedidos.html">Pedidos</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="cadastro.html">Cadastro</a></li>
-                    <li><a href="admin.html">Admin</a></li>
                 </ul>
             </div>
             <div>
-                <h3>Contato</h3>
+                <h3>Informações</h3>
                 <ul>
                     <li><a href="tel:11989053387">(11) 98905-3387</a></li>
-                    <li><a href="mailto:contato@cafemarangoni.com.br">contato@cafemarangoni.com.br</a></li>
-                    <li><a href="index.html#contato">Localização</a></li>
+                    <li><a href="mailto:lucas.marangoni2008@gmail.com">lucas.marangoni2008@gmail.com</a></li>
+                    <li>Seg-Sex: 6h30 - 19h</li>
+                    <li>Sáb-Dom: 8h - 18h</li>
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2026 Café Marangoni. Todos os direitos reservados.</p>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Café Marangoni. Todos os direitos reservados.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/script.js" th:src="@{/js/script.js}"></script>
 </body>
-
 </html>
