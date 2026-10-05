@@ -130,8 +130,8 @@ function renderCatalog() {
             </div>
             <div class="catalog-products-grid">
                 ${category.products.map((product) => {
-                    const productImage = product.image ?? category.image;
-                    return `
+        const productImage = product.image ?? category.image;
+        return `
                         <article class="catalog-product">
                             <div class="catalog-product__image-wrap">
                                 <img class="catalog-product__image"
@@ -152,7 +152,7 @@ function renderCatalog() {
                             </div>
                         </article>
                     `;
-                }).join("")}
+    }).join("")}
             </div>
         </section>
     `).join("");
@@ -280,9 +280,9 @@ function renderOrderHistory() {
                         <span class="status status--processing">Demonstração local</span>
                     </div>
                     <p>${order.items
-                        .filter((item) => item && findProduct(item.id) && Number.isInteger(item.quantity) && item.quantity > 0)
-                        .map((item) => `${item.quantity} × ${findProduct(item.id).name}`)
-                        .join(" + ")}</p>
+                .filter((item) => item && findProduct(item.id) && Number.isInteger(item.quantity) && item.quantity > 0)
+                .map((item) => `${item.quantity} × ${findProduct(item.id).name}`)
+                .join(" + ")}</p>
                     <small>${escapeHtml(order.fulfillmentLabel)} · ${currency.format(order.total)} · ${escapeHtml(order.createdAt)}</small>
                 </div>
             </article>
