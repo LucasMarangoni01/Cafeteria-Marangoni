@@ -1,393 +1,403 @@
 <!DOCTYPE html>
 <html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Café Marangoni: cafeteria gourmet premium com bebidas artesanais, padaria fresca e ambiente acolhedor." />
-    <meta name="keywords" content="café gourmet, cafeteria premium, cappuccino artesanal, latte especial, sobremesas gourmet, delivery, cardápio, café especializado" />
-    <meta name="author" content="Lucas Marangoni, 11989053387, lucas.marangoni2008@gmail.com" />
+    <meta name="description"
+        content="Café Marangoni: cafeteria gourmet premium com bebidas artesanais, padaria fresca e ambiente acolhedor em Mairinque, SP." />
+    <meta name="keywords"
+        content="café gourmet, cafeteria premium, cappuccino artesanal, latte, bebidas artesanais, padaria fresca, Mairinque" />
+    <meta name="author" content="Lucas Marangoni, (11) 98905-3387, lucas.marangoni2008@gmail.com" />
     <meta name="theme-color" content="#2c1810" />
-    <title>Café Marangoni | Cafeteria Gourmet Premium</title>
+    <title>Café Marangoni | Cafeteria Gourmet Premium em Mairinque</title>
     <link rel="icon" type="image/jpeg" href="../static/img/favicon.jpg" th:href="@{/img/favicon.jpg}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}" />
 </head>
+
 <body>
+
+    <!-- HEADER -->
     <header class="site-header">
         <nav class="navbar navbar-expand-lg container" aria-label="Navegação principal">
-            <a class="navbar-brand d-inline-flex align-items-center gap-2" href="index.html" aria-label="Café Marangoni - página inicial">
-                <img src="../static/img/favicon.jpg" th:src="@{/img/favicon.jpg}" alt="Logo Café Marangoni" class="brand-logo" />
+            <a class="navbar-brand" href="index.html" th:href="@{/}" aria-label="Café Marangoni - página inicial">
+                <img src="../static/img/favicon.jpg" th:src="@{/img/favicon.jpg}" alt="Logo" class="brand-logo" />
                 <span>Café Marangoni</span>
             </a>
-            <button class="navbar-toggler" type="button" aria-controls="mainNavigation" aria-expanded="false" aria-label="Abrir menu" data-nav-toggle>
+
+            <button class="navbar-toggler" type="button" aria-controls="mainNavigation" aria-expanded="false"
+                aria-label="Abrir menu" data-nav-toggle>
                 <i class="fa-solid fa-bars" aria-hidden="true"></i>
             </button>
+
             <div class="navbar-collapse" id="mainNavigation">
                 <ul class="navbar-nav align-items-lg-center ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Início</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
-                    <li class="nav-item"><a class="nav-link" href="produtos.html">Cardápio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pedidos.html">Pedidos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html">Entrar</a></li>
-                    <li class="nav-item"><a class="btn btn-nav" href="cadastro.html">Criar conta</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" aria-current="page">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="produtos.html" th:href="@{/produtos}">Cardápio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pedidos.html" th:href="@{/pedidos}">Pedidos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html" th:href="@{/login}">Entrar</a>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="btn btn-nav" href="cadastro.html" th:href="@{/cadastro}">Criar conta</a>
+                    </li>
                 </ul>
             </div>
         </nav>
     </header>
 
     <main>
-        <!-- HERO SECTION -->
+
+        <!-- ===== HERO SECTION ===== -->
         <section class="hero" id="home">
             <div class="hero__overlay"></div>
+
             <div class="container hero__content">
                 <div class="hero__text">
-                    <span class="eyebrow eyebrow--light">Cafeteria premium</span>
-                    <h1>O café que transforma cada pausa em um momento especial.</h1>
-                    <p>
-                        Bebidas artesanais, receitas com cuidado e um ambiente acolhedor para encontros,
-                        trabalho e momentos de pausa.
-                    </p>
+                    <span class="eyebrow eyebrow--light">Cafeteria gourmet premium</span>
+                    <h1>Uma pausa que transforma o seu dia.</h1>
+                    <p>Bebidas artesanais preparadas com cuidado, padaria fresca, ambiente acolhedor e atendimento que
+                        encanta. A experiência Café Marangoni está aqui para suas pausas especiais.</p>
 
                     <div class="hero__actions">
-                        <a class="btn btn--primary" href="#cardapio">Ver menu</a>
-                        <a class="btn btn--ghost" href="#contato">Fazer pedido</a>
+                        <a class="btn btn--primary" href="produtos.html" th:href="@{/produtos}">Explorar cardápio</a>
+                        <a class="btn btn--ghost" href="#contato">Conhecer a cafeteria</a>
                     </div>
 
                     <div class="hero__highlights">
                         <span><i class="fa-solid fa-mug-hot"></i> Café artesanal</span>
                         <span><i class="fa-solid fa-bread-slice"></i> Padaria fresca</span>
-                        <span><i class="fa-solid fa-truck-fast"></i> Delivery rápido</span>
+                        <span><i class="fa-solid fa-leaf"></i> Ingredientes selecionados</span>
                     </div>
                 </div>
 
                 <div class="hero__visual">
                     <div class="hero__frame">
-                        <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel" data-bs-interval="3000" role="region" aria-label="Fotos da cafeteria">
+                        <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel"
+                            data-bs-interval="3000" role="region" aria-label="Galeria de fotos">
+
                             <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Mostrar foto 1"></button>
-                                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Mostrar foto 2"></button>
-                                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Mostrar foto 3"></button>
+                                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+                                    aria-current="true" aria-label="Foto 1"></button>
+                                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"
+                                    aria-label="Foto 2"></button>
+                                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"
+                                    aria-label="Foto 3"></button>
                             </div>
+
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="../static/img/imagem_representacao_Latte_Caramelo.jpg" th:src="@{/img/imagem_representacao_Latte_Caramelo.jpg}" alt="Latte de caramelo servido na cafeteria" class="d-block w-100" />
+                                    <img src="../static/img/imagem_representacao_Latte_Caramelo.jpg"
+                                        th:src="@{/img/imagem_representacao_Latte_Caramelo.jpg}"
+                                        alt="Latte Caramelo - especialidade da casa" />
                                 </div>
+
                                 <div class="carousel-item">
-                                    <img src="../static/img/imagem_representacao_Cappuccino_Gourmet.jpg" th:src="@{/img/imagem_representacao_Cappuccino_Gourmet.jpg}" alt="Cappuccino gourmet servido na cafeteria" class="d-block w-100" />
+                                    <img src="../static/img/imagem_representacao_Cappuccino_Gourmet.jpg"
+                                        th:src="@{/img/imagem_representacao_Cappuccino_Gourmet.jpg}"
+                                        alt="Cappuccino Gourmet com arte em latte" />
                                 </div>
+
                                 <div class="carousel-item">
-                                    <img src="../static/img/imagem1.jpg" th:src="@{/img/imagem1.jpg}" alt="Café acompanhado de pão de queijo" class="d-block w-100" />
+                                    <img src="../static/img/imagem1.jpg" th:src="@{/img/imagem1.jpg}"
+                                        alt="Café preparado com cuidado" />
                                 </div>
                             </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" aria-label="Foto anterior">
+
+                            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel"
+                                data-bs-slide="prev" aria-label="Foto anterior">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" aria-label="Próxima foto">
+
+                            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel"
+                                data-bs-slide="next" aria-label="Próxima foto">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             </button>
                         </div>
+
                         <div class="floating-card floating-card--top">
-                            <strong>Especial da casa</strong>
+                            <strong>Especialidade</strong>
                             <span>Latte Caramelo</span>
-                            <small>Notas de baunilha e chocolate</small>
+                            <small>Baunilha e chocolate</small>
                         </div>
+
                         <div class="floating-card floating-card--bottom">
-                            <strong>Atendimento</strong>
-                            <span>Seg-Sex 6h30 - 19h</span>
-                            <small>Ambiente acolhedor e sabor premium</small>
+                            <strong>Experiência</strong>
+                            <span>Mais de 10 anos</span>
+                            <small>Tradição e qualidade</small>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="story-section" id="historia-cafe" aria-labelledby="coffee-history-title">
+        <!-- ===== HISTÓRIA DO CAFÉ ===== -->
+        <section class="story-section" aria-labelledby="coffee-history-title">
             <div class="container">
                 <div class="story-section__heading">
-                    <span class="eyebrow eyebrow--dark">Uma história que atravessa gerações</span>
-                    <h2 id="coffee-history-title">Da origem do café às pausas de hoje.</h2>
-                    <p>Uma breve viagem pela história da bebida que inspira a nossa cafeteria.</p>
+                    <span class="eyebrow eyebrow--dark">Nossa história</span>
+                    <h2 id="coffee-history-title">Uma tradição em cada xícara</h2>
+                    <p>Conheça a jornada que une história, qualidade e paixão pelo café</p>
                 </div>
+
                 <div class="story-timeline">
                     <article class="story-moment">
                         <span class="story-moment__date">Origens</span>
-                        <h3>Uma descoberta lendária</h3>
-                        <p>Uma antiga lenda da Etiópia conta que o pastor Kaldi percebeu a energia de suas cabras após comerem frutos vermelhos de um arbusto de café.</p>
+                        <h3>A descoberta lendária</h3>
+                        <p>Uma antiga lenda da Etiópia conta que o pastor Kaldi percebeu a energia de suas cabras ao
+                            comerem frutos vermelhos de um arbusto de café.</p>
                     </article>
+
                     <article class="story-moment">
                         <span class="story-moment__date">1727</span>
-                        <h3>O café chega ao Brasil</h3>
-                        <p>O cultivo chegou ao norte do Brasil e, ao longo dos séculos, ganhou novas regiões, saberes e importância na cultura do país.</p>
+                        <h3>Chegada ao Brasil</h3>
+                        <p>O cultivo chegou ao norte do Brasil e, ao longo dos séculos, ganhou importância na cultura e
+                            economia do país.</p>
                     </article>
+
                     <article class="story-moment">
                         <span class="story-moment__date">Hoje</span>
-                        <h3>Cada xícara, uma experiência</h3>
-                        <p>Da seleção do grão ao preparo, o café continua aproximando pessoas e criando momentos para compartilhar — inspiração para o Café Marangoni.</p>
+                        <h3>Café Marangoni</h3>
+                        <p>Inspirado por essa tradição, o Café Marangoni transforma cada xícara em um momento de pausa,
+                            encontro e sabor.</p>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- HIGHLIGHTS SECTION -->
+        <!-- ===== DESTAQUES ===== -->
         <section class="highlights-strip">
             <div class="container highlights-strip__grid">
                 <article class="highlight-item">
-                    <div class="highlight-item__icon"><i class="fa-solid fa-seedling"></i></div>
+                    <div class="highlight-item__icon">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
                     <div>
                         <h3>Ingredientes selecionados</h3>
-                        <p>Grãos premium e receitas cuidadas para uma experiência irresistível.</p>
+                        <p>Grãos premium escolhidos com cuidado para garantir qualidade em cada bebida.</p>
                     </div>
                 </article>
 
                 <article class="highlight-item">
-                    <div class="highlight-item__icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                    <div class="highlight-item__icon">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
                     <div>
                         <h3>Atendimento acolhedor</h3>
-                        <p>Equipe preparada para oferecer conforto, atenção e qualidade.</p>
+                        <p>Equipe dedicada a oferecer conforto, atenção pessoal e uma experiência memorável.</p>
                     </div>
                 </article>
 
                 <article class="highlight-item">
-                    <div class="highlight-item__icon"><i class="fa-solid fa-clock"></i></div>
+                    <div class="highlight-item__icon">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
                     <div>
-                        <h3>Rápido e prático</h3>
-                        <p>Experiência eficiente para quem busca sabor sem perder tempo.</p>
+                        <h3>Ambiente especial</h3>
+                        <p>Espaço aconchegante com 15 mesas para pausas, conversas ou trabalho concentrado.</p>
                     </div>
                 </article>
             </div>
         </section>
 
-        <!-- ABOUT SECTION -->
+        <!-- ===== SOBRE ===== -->
         <section class="about" id="sobre">
             <div class="container about__grid">
                 <div class="about__media">
-                    <video autoplay muted loop playsinline aria-label="Vídeo ilustrativo de preparação de café gourmet">
-                        <source src="../static/video/video_preparacao_cafe_gourmet.mp4" th:src="@{/video/video_preparacao_cafe_gourmet.mp4}" type="video/mp4" />
+                    <video autoplay muted loop playsinline aria-label="Vídeo: preparação de café gourmet">
+                        <source src="../static/video/video_preparacao_cafe_gourmet.mp4"
+                            th:src="@{/video/video_preparacao_cafe_gourmet.mp4}" type="video/mp4" />
                         Seu navegador não suporta o elemento de vídeo.
                     </video>
+
                     <div class="about__badge">
-                        <span>Uma pausa</span>
-                        <strong>com cuidado</strong>
-                        <small>do primeiro gole ao último</small>
+                        <span></span>
+                        <strong>+10 anos</strong>
+                        <small>de experiência e tradição</small>
                     </div>
                 </div>
 
                 <div class="about__content">
-                    <span class="eyebrow eyebrow--dark">Sobre nós</span>
-                    <h2>Uma experiência que combina sabor, conforto e autenticidade.</h2>
-                    <p>
-                        A ideia do Café Marangoni nasceu do desejo de transformar a pausa para o café
-                        em um momento de encontro, sabor e acolhimento. A proposta reúne receitas
-                        preparadas com atenção e um espaço convidativo para clientes, amigos e família.
-                    </p>
-                    <p>
-                        O nome Marangoni representa essa vontade de receber bem: com cafés, lanches e
-                        doces para diferentes momentos do dia, seja no balcão, à mesa ou em casa.
-                    </p>
-                    <p>
-                        Para quem prefere consumir no local, o atendimento é organizado no balcão ou em
-                        uma das 15 mesas, em um espaço pensado para conversas, encontros e pausas confortáveis.
-                    </p>
+                    <span class="eyebrow eyebrow--dark">Sobre o Café Marangoni</span>
+                    <h2>Uma cafeteria que reúne sabor e aconchego</h2>
+                    <p>O Café Marangoni nasceu da vontade de transformar a pausa para o café em um momento especial de
+                        encontro e acolhimento. Cada receita é preparada com atenção aos detalhes e com ingredientes
+                        cuidadosamente selecionados.</p>
+                    <p>Oferecemos atendimento flexível: aproveite um café no balcão, sente em uma de nossas 15 mesas
+                        aconchegantes, ou leve para casa. Porque acreditamos que toda pausa merece ser especial.</p>
 
                     <div class="about__stats">
                         <div>
-                            <strong>7</strong>
-                            <span>categorias no cardápio</span>
+                            <strong>8</strong>
+                            <span>categorias de produtos</span>
                         </div>
                         <div>
                             <strong>15</strong>
-                            <span>mesas para atendimento</span>
+                            <span>mesas aconchegantes</span>
                         </div>
                         <div>
-                            <strong>3</strong>
-                            <span>formas de atendimento</span>
+                            <strong>10+</strong>
+                            <span>anos de experiência</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- FEATURES SECTION -->
+        <!-- ===== DIFERENCIAIS ===== -->
         <section class="features">
             <div class="container">
                 <div class="section-heading">
-                    <span class="eyebrow eyebrow--dark">Diferenciais</span>
-                    <h2>Por que escolher o Café Marangoni?</h2>
+                    <span class="eyebrow eyebrow--dark">Por que nos escolher</span>
+                    <h2>O que torna o Café Marangoni especial</h2>
                 </div>
 
                 <div class="feature-grid">
                     <article class="feature-card">
-                        <div class="feature-card__icon"><i class="fa-solid fa-award"></i></div>
+                        <div class="feature-card__icon">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
                         <h3>Qualidade premium</h3>
-                        <p>Grãos selecionados e preparo com atenção aos detalhes.</p>
+                        <p>Grãos selecionados, preparo artesanal e atenção em cada detalhe para garantir excelência.</p>
                     </article>
 
                     <article class="feature-card">
-                        <div class="feature-card__icon"><i class="fa-solid fa-users"></i></div>
-                        <h3>Atendimento acolhedor</h3>
-                        <p>Equipe dedicada a proporcionar uma experiência prazerosa.</p>
+                        <div class="feature-card__icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <h3>Atendimento personalizado</h3>
+                        <p>Equipe que conhece seus clientes e se dedica a criar experiências memoráveis.</p>
                     </article>
 
                     <article class="feature-card">
-                        <div class="feature-card__icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                        <div class="feature-card__icon">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </div>
                         <h3>Ambiente aconchegante</h3>
-                        <p>Espaço pensado para relaxar, conversar e aproveitar o momento.</p>
+                        <p>Espaço cuidadosamente pensado para conversas, trabalho e momentos de pausa perfeitos.</p>
                     </article>
 
                     <article class="feature-card">
-                        <div class="feature-card__icon"><i class="fa-solid fa-leaf"></i></div>
+                        <div class="feature-card__icon">
+                            <i class="fa-solid fa-leaf"></i>
+                        </div>
                         <h3>Sustentabilidade</h3>
-                        <p>Compromisso com escolhas mais conscientes e responsáveis.</p>
+                        <p>Compromisso com escolhas conscientes, responsáveis com o meio ambiente e a comunidade.</p>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- MENU SECTION -->
-        <section class="menu" id="cardapio">
+        <!-- ===== DESTAQUES DO CARDÁPIO ===== -->
+        <section class="menu">
             <div class="container">
                 <div class="section-heading">
                     <span class="eyebrow eyebrow--dark">Cardápio</span>
-                    <h2>Nosso menu gourmet</h2>
+                    <h2>Nossos destaques</h2>
+                    <p>Uma seleção especial para começar sua experiência. Veja o cardápio completo em nosso menu.</p>
                 </div>
 
-                <div class="menu-grid">
-                    <article class="menu-card">
-                        <div class="menu-card__icon"><i class="fa-solid fa-mug-hot"></i></div>
-                        <h3>Bebidas quentes</h3>
-                        <ul>
-                            <li>Espresso Premium</li>
-                            <li>Cappuccino Artesanal</li>
-                            <li>Latte Especial</li>
-                            <li>Macchiato</li>
-                        </ul>
-                        <span class="price">A partir de R$ 8,90</span>
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <div class="feature-card__icon">
+                            <i class="fa-solid fa-mug-hot"></i>
+                        </div>
+                        <h3>Cappuccino Gourmet</h3>
+                        <p>Espuma cremosa, café intenso e aroma de cacau com leite vaporizado. Nosso favorito da casa.
+                        </p>
+                        <div style="margin-top: 1rem; text-align: center; color: var(--secondary); font-weight: 800;">R$
+                            18,90</div>
                     </article>
 
-                    <article class="menu-card">
-                        <div class="menu-card__icon"><i class="fa-solid fa-ice-cream"></i></div>
-                        <h3>Bebidas geladas</h3>
-                        <ul>
-                            <li>Cold Brew</li>
-                            <li>Iced Latte</li>
-                            <li>Affogato</li>
-                            <li>Frappé Gourmet</li>
-                        </ul>
-                        <span class="price">A partir de R$ 12,90</span>
+                    <article class="feature-card">
+                        <div class="feature-card__icon">
+                            <i class="fa-solid fa-ice-cream"></i>
+                        </div>
+                        <h3>Cold Brew Gelado</h3>
+                        <p>Café extraído a frio, refrescante e equilibrado. Perfeito para dias quentes com sabor suave.
+                        </p>
+                        <div style="margin-top: 1rem; text-align: center; color: var(--secondary); font-weight: 800;">R$
+                            16,50</div>
                     </article>
 
-                    <article class="menu-card">
-                        <div class="menu-card__icon"><i class="fa-solid fa-birthday-cake"></i></div>
-                        <h3>Confeitaria fina</h3>
-                        <ul>
-                            <li>Croissant de manteiga</li>
-                            <li>Bolo de chocolate</li>
-                            <li>Torta de frutas</li>
-                            <li>Brigadeiro gourmet</li>
-                        </ul>
-                        <span class="price">A partir de R$ 6,90</span>
-                    </article>
-
-                    <article class="menu-card">
-                        <div class="menu-card__icon"><i class="fa-solid fa-utensils"></i></div>
-                        <h3>Lanches premium</h3>
-                        <ul>
-                            <li>Sanduíche gourmet</li>
-                            <li>Quiche de queijo</li>
-                            <li>Focaccia italiana</li>
-                            <li>Tartine especial</li>
-                        </ul>
-                        <span class="price">A partir de R$ 9,90</span>
-                    </article>
-
-                    <article class="menu-card">
-                        <div class="menu-card__icon"><i class="fa-solid fa-bread-slice"></i></div>
-                        <h3>Padaria fresca</h3>
-                        <ul>
-                            <li>Pão francês</li>
-                            <li>Baguete tradicional</li>
-                            <li>Ciabatta</li>
-                            <li>Broa de milho</li>
-                        </ul>
-                        <span class="price">A partir de R$ 3,90</span>
-                    </article>
-
-                    <article class="menu-card">
-                        <div class="menu-card__icon"><i class="fa-solid fa-cake-candles"></i></div>
-                        <h3>Sobremesas requintadas</h3>
-                        <ul>
-                            <li>Tiramisú</li>
-                            <li>Pavlova</li>
-                            <li>Mousse de café</li>
-                            <li>Pudim gourmet</li>
-                        </ul>
-                        <span class="price">A partir de R$ 7,90</span>
-                    </article>
-
-                    <article class="menu-card">
-                        <div class="menu-card__icon"><i class="fa-solid fa-leaf"></i></div>
-                        <h3>Opções saudáveis</h3>
-                        <ul>
-                            <li>Salada de frutas</li>
-                            <li>Iogurte com granola</li>
-                            <li>Sanduíche integral</li>
-                            <li>Tapioca</li>
-                        </ul>
-                        <span class="price">A partir de R$ 10,90</span>
-                    </article>
-
-                    <article class="menu-card">
-                        <div class="menu-card__icon"><i class="fa-solid fa-gift"></i></div>
-                        <h3>Produtos para levar</h3>
-                        <ul>
-                            <li>Grãos especiais</li>
-                            <li>Café moído</li>
-                            <li>Cápsulas de café</li>
-                            <li>Canecas personalizadas</li>
-                        </ul>
-                        <span class="price">A partir de R$ 24,90</span>
+                    <article class="feature-card">
+                        <div class="feature-card__icon">
+                            <i class="fa-solid fa-bread-slice"></i>
+                        </div>
+                        <h3>Croissant de Manteiga</h3>
+                        <p>Massa folhada em camadas delicadas, assada até ficar dourada e crocante. Artesanal
+                            diariamente.</p>
+                        <div style="margin-top: 1rem; text-align: center; color: var(--secondary); font-weight: 800;">R$
+                            12,00</div>
                     </article>
                 </div>
 
                 <div class="menu-cta">
                     <div class="menu-cta__content">
-                        <h3>Pronto para uma pausa saborosa?</h3>
+                        <h3>Quer experimentar mais?</h3>
                         <div class="menu-cta__actions">
-                            <a class="btn btn--primary" href="#contato">Pedir agora</a>
-                            <a class="btn btn--secondary-light" href="#sobre">Conhecer mais</a>
+                            <a class="btn btn--primary" href="produtos.html" th:href="@{/produtos}">Ver cardápio
+                                completo</a>
+                            <a class="btn btn--secondary-light" href="pedidos.html" th:href="@{/pedidos}">Fazer
+                                pedido</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA BANNER -->
+        <!-- ===== CTA BANNER ===== -->
         <section class="cta-banner">
             <div class="container cta-banner__content">
                 <div>
-                    <span class="eyebrow eyebrow--light">Experiência com qualidade</span>
-                    <h2>Um café que combina sabor, conforto e aconchego.</h2>
+                    <span class="eyebrow eyebrow--light">Pronto para uma pausa especial?</span>
+                    <h2>Visite o Café Marangoni agora</h2>
                 </div>
-                <a class="btn btn--primary" href="#contato">Agendar visita</a>
+                <a class="btn btn--primary" href="#contato">Entre em contato</a>
             </div>
         </section>
 
-        <!-- CONTACT SECTION -->
+        <!-- ===== CONTATO + MAPA ===== -->
         <section class="contact" id="contato">
             <div class="container contact__grid">
                 <div class="contact-card">
-                    <span class="eyebrow eyebrow--dark">Contato</span>
+                    <span class="eyebrow eyebrow--dark">Informações</span>
                     <h2>Venha nos visitar</h2>
+
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <strong>Endereço</strong>
+                            <p>
+                                R. Pedro Lara Pinto, 355<br />
+                                Nova Mairinque, Mairinque - SP<br />
+                                18120-000
+                            </p>
+                        </div>
+                    </div>
 
                     <div class="contact-item">
                         <i class="fa-solid fa-phone"></i>
                         <div>
                             <strong>Telefone</strong>
-                            <p><a href="tel:11989053387">(11) 98905-3387</a></p>
+                            <p>
+                                <a href="tel:11989053387">(11) 98905-3387</a>
+                            </p>
                         </div>
                     </div>
 
@@ -395,39 +405,35 @@
                         <i class="fa-solid fa-envelope"></i>
                         <div>
                             <strong>E-mail</strong>
-                            <p><a href="mailto:lucas.marangoni2008@gmail.com">lucas.marangoni2008@gmail.com</a></p>
+                            <p>
+                                <a href="mailto:lucas.marangoni2008@gmail.com">lucas.marangoni2008@gmail.com</a>
+                            </p>
                         </div>
                     </div>
 
                     <div class="contact-item">
                         <i class="fa-solid fa-clock"></i>
                         <div>
-                            <strong>Funcionamento</strong>
-                            <p>Segunda a sexta: 6h30 - 19h<br />Sábado: 8h - 18h<br />Domingo: 8h - 17h</p>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                            <div>
-                                <strong>Endereço</strong>
-                                <p>R. Pedro Lara Pinto, 355 - Nova Mairinque, Mairinque - SP, 18120-000</p>
-                            </div>
+                            <strong>Horário de funcionamento</strong>
+                            <p>
+                                <strong>Seg-Sex:</strong> 6h30 - 19h<br />
+                                <strong>Sáb-Dom:</strong> 8h - 18h
+                            </p>
                         </div>
                     </div>
                 </div>
 
                 <div class="contact-card contact-card--map">
                     <span class="eyebrow eyebrow--dark">Localização</span>
-                    <h2>Encontre a nossa cafeteria</h2>
+                    <h2>Encontre-nos no mapa</h2>
                     <iframe
                         src="https://www.google.com/maps?q=R.%20Pedro%20Lara%20Pinto%2C%20355%20-%20Nova%20Mairinque%2C%20Mairinque%20-%20SP%2C%2018120-000&z=15&output=embed"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Mapa da localização da cafeteria">
-                    </iframe>
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        title="Localização Café Marangoni"></iframe>
                 </div>
             </div>
         </section>
+
     </main>
 
     <!-- FOOTER -->
@@ -435,36 +441,61 @@
         <div class="container footer-grid">
             <div>
                 <a class="footer-brand" href="index.html" th:href="@{/}">
-                    <img class="brand-logo" src="../static/img/favicon.jpg" th:src="@{/img/favicon.jpg}" alt="" />
+                    <img class="brand-logo" src="../static/img/favicon.jpg" th:src="@{/img/favicon.jpg}"
+                        alt="Logo Café Marangoni" />
                     <span>Café Marangoni</span>
                 </a>
-                <p>
-                    Cafeteria gourmet premium com ambiente acolhedor, sabores artesanais e atendimento que encanta.
-                </p>
+
+                <p>Cafeteria gourmet premium com ambiente acolhedor, bebidas artesanais e padaria fresca. Uma pausa que
+                    transforma seu dia.</p>
+
                 <div class="social-list">
-                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" aria-label="WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
                 </div>
             </div>
 
             <div>
-                <h3>Links rápidos</h3>
+                <h3>Navegação</h3>
                 <ul>
-                    <li><a href="index.html#home">Início</a></li>
-                    <li><a href="index.html#sobre">Sobre</a></li>
-                    <li><a href="produtos.html">Cardápio</a></li>
-                    <li><a href="pedidos.html">Pedidos</a></li>
+                    <li>
+                        <a href="#home">Início</a>
+                    </li>
+                    <li>
+                        <a href="#sobre">Sobre</a>
+                    </li>
+                    <li>
+                        <a href="produtos.html" th:href="@{/produtos}">Cardápio completo</a>
+                    </li>
+                    <li>
+                        <a href="pedidos.html" th:href="@{/pedidos}">Meus pedidos</a>
+                    </li>
                 </ul>
             </div>
 
             <div>
-                <h3>Informações</h3>
+                <h3>Contato</h3>
                 <ul>
-                    <li><a href="tel:11989053387">(11) 98905-3387</a></li>
-                    <li><a href="mailto:lucas.marangoni2008@gmail.com">lucas.marangoni2008@gmail.com</a></li>
-                    <li>Seg-Sex: 6h30 - 19h</li>
-                    <li>Sáb-Dom: 8h - 18h</li>
+                    <li>
+                        <a href="tel:11989053387" title="Ligar">(11) 98905-3387</a>
+                    </li>
+                    <li>
+                        <a href="mailto:lucas.marangoni2008@gmail.com"
+                            title="Enviar e-mail">lucas.marangoni2008@gmail.com</a>
+                    </li>
+                    <li>
+                        <strong>Seg-Sex:</strong> 6h30 - 19h
+                    </li>
+                    <li>
+                        <strong>Sáb-Dom:</strong> 8h - 18h
+                    </li>
                 </ul>
             </div>
         </div>
@@ -477,4 +508,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../static/js/script.js" th:src="@{/js/script.js}"></script>
 </body>
+
 </html>

@@ -6,9 +6,9 @@ const catalog = [
         description: "Clássicos preparados na hora.",
         image: "imagem_representacao_Cappuccino_Gourmet.jpg",
         products: [
-            { id: "espresso", name: "Café expresso", description: "Extração curta, aroma intenso e finalização cremosa.", price: 8.9 },
-            { id: "cappuccino", name: "Cappuccino", description: "Café, leite vaporizado e uma delicada camada de espuma.", price: 15.9 },
-            { id: "latte", name: "Latte", description: "Espresso equilibrado com leite vaporizado e textura aveludada.", price: 16.9 }
+            { id: "espresso", name: "Café expresso", description: "Extração curta, aroma intenso e finalização cremosa.", price: 8.9, image: "imagem_representacao_Cafe_expresso.jpg" },
+            { id: "cappuccino", name: "Cappuccino", description: "Café, leite vaporizado e uma delicada camada de espuma.", price: 15.9, image: "imagem_representacao_Cappuccino_Gourmet.jpg" },
+            { id: "latte", name: "Latte", description: "Espresso equilibrado com leite vaporizado e textura aveludada.", price: 16.9, image: "imagem_representacao_Latte_Caramelo.jpg" }
         ]
     },
     {
@@ -17,9 +17,9 @@ const catalog = [
         description: "Receitas refrescantes para qualquer momento.",
         image: "imagem_representacao_Cold_Brew.jpg",
         products: [
-            { id: "iced-coffee", name: "Iced Coffee", description: "Café gelado servido com gelo para uma pausa refrescante.", price: 14.9 },
-            { id: "cold-brew", name: "Cold Brew", description: "Café extraído a frio, suave e naturalmente aromático.", price: 16.5 },
-            { id: "smoothie", name: "Smoothie de frutas", description: "Bebida cremosa de frutas batidas, servida bem gelada.", price: 18.9 }
+            { id: "iced-coffee", name: "Iced Coffee", description: "Café gelado servido com gelo para uma pausa refrescante.", price: 14.9, image: "imagem_representacao_Iced_Coffee.jpg" },
+            { id: "cold-brew", name: "Cold Brew", description: "Café extraído a frio, suave e naturalmente aromático.", price: 16.5, image: "imagem_representacao_Cold_Brew.jpg" },
+            { id: "smoothie", name: "Smoothie de frutas", description: "Bebida cremosa de frutas batidas, servida bem gelada.", price: 18.9, image: "imagem_representacao_Smoothies.jpg" }
         ]
     },
     {
@@ -28,9 +28,9 @@ const catalog = [
         description: "Receitas assadas e doces para acompanhar o café.",
         image: "imagem_representacao_Croissant_Manteiga.jpg",
         products: [
-            { id: "pao-de-queijo", name: "Pão de queijo", description: "Porção de pães de queijo dourados, assados no dia.", price: 9.5 },
-            { id: "croissant", name: "Croissant de manteiga", description: "Massa folhada em camadas delicadas e crocantes.", price: 12 },
-            { id: "brownie", name: "Brownie", description: "Bolo de chocolate macio com casquinha delicada.", price: 11.9 }
+            { id: "pao-de-queijo", name: "Pão de queijo", description: "Porção de pães de queijo dourados, assados no dia.", price: 9.5, image: "imagem_representacao_Pao_de_queijo.jpg" },
+            { id: "croissant", name: "Croissant de manteiga", description: "Massa folhada em camadas delicadas e crocantes.", price: 12, image: "imagem_representacao_Croissant_Manteiga.jpg" },
+            { id: "brownie", name: "Brownie", description: "Bolo de chocolate macio com casquinha delicada.", price: 11.9, image: "imagem_representacao_Brownie.jpg" }
         ]
     },
     {
@@ -39,9 +39,9 @@ const catalog = [
         description: "Opções salgadas preparadas para a sua pausa.",
         image: "imagem2.jpg",
         products: [
-            { id: "misto-quente", name: "Misto quente", description: "Pão tostado com queijo derretido e presunto.", price: 18.9 },
-            { id: "quiche", name: "Quiche do dia", description: "Massa leve com recheio cremoso preparado na casa.", price: 17.5 },
-            { id: "empada", name: "Empada artesanal", description: "Massa amanteigada com recheio salgado do dia.", price: 10.9 }
+            { id: "misto-quente", name: "Misto quente", description: "Pão tostado com queijo derretido e presunto.", price: 18.9, image: "imagem_representacao_misto_quente.jpg" },
+            { id: "quiche", name: "Quiche do dia", description: "Massa leve com recheio cremoso preparado na casa.", price: 17.5, image: "imagem_representacao_Quiche_do_dia.jpg" },
+            { id: "empada", name: "Empada artesanal", description: "Massa amanteigada com recheio salgado do dia.", price: 10.9, image: "imagem_representacao_empada_artesanal.jpg" }
         ]
     },
     {
@@ -50,9 +50,9 @@ const catalog = [
         description: "Um toque doce para encerrar bem a experiência.",
         image: "imagem1.jpg",
         products: [
-            { id: "pudim", name: "Pudim", description: "Sobremesa cremosa com calda de caramelo.", price: 12.9 },
-            { id: "brigadeiro-gourmet", name: "Brigadeiro gourmet", description: "Brigadeiro de chocolate com finalização artesanal.", price: 6.5 },
-            { id: "tiramisu", name: "Tiramisù", description: "Camadas delicadas de creme, café e cacau.", price: 19.9 }
+            { id: "pudim", name: "Pudim", description: "Sobremesa cremosa com calda de caramelo.", price: 12.9, image: "imagem_representacao_pudim.jpg" },
+            { id: "brigadeiro-gourmet", name: "Brigadeiro gourmet", description: "Brigadeiro de chocolate com finalização artesanal.", price: 6.5, image: "imagem_representacao_brigadeiro-gourmet.jpg" },
+            { id: "tiramisu", name: "Tiramisù", description: "Camadas delicadas de creme, café e cacau.", price: 19.9, image: "imagem_representacao_TIramisu.jpg" }
         ]
     },
     {
@@ -61,9 +61,9 @@ const catalog = [
         description: "Combinações leves para diferentes preferências.",
         image: "imagem3.jpg",
         products: [
-            { id: "salada-frutas", name: "Salada de frutas", description: "Seleção de frutas frescas cortadas na hora.", price: 14.9 },
-            { id: "iogurte-granola", name: "Iogurte com granola", description: "Iogurte servido com granola crocante e frutas.", price: 16.5 },
-            { id: "tapioca", name: "Tapioca", description: "Tapioca preparada na hora com recheio à escolha.", price: 15.9 }
+            { id: "salada-frutas", name: "Salada de frutas", description: "Seleção de frutas frescas cortadas na hora.", price: 14.9, image: "imagem_representacao_Salada-frutas.jpg" },
+            { id: "iogurte-granola", name: "Iogurte com granola", description: "Iogurte servido com granola crocante e frutas.", price: 16.5, image: "imagem_representacao_Iogurte-granola.jpg" },
+            { id: "tapioca", name: "Tapioca", description: "Tapioca preparada na hora com recheio à escolha.", price: 15.9, image: "imagem_representacao_Tapioca.jpg" }
         ]
     },
     {
@@ -72,9 +72,9 @@ const catalog = [
         description: "Leve um pouco da experiência Café Marangoni para casa.",
         image: "imagem_representacao_Latte_Caramelo.jpg",
         products: [
-            { id: "graos-especiais", name: "Grãos de café especiais · 250 g", description: "Grãos selecionados para moer e preparar em casa.", price: 39.9 },
-            { id: "cafe-moido", name: "Café moído · 250 g", description: "Café moído para facilitar o preparo no dia a dia.", price: 34.9 },
-            { id: "capsulas-cafe", name: "Cápsulas de café · caixa", description: "Cápsulas práticas para uma xícara rápida.", price: 29.9 }
+            { id: "Canecas-personalizadas", name: "Canecas personalizadas da nossa cafeteria· 350 ml", description: "Caneca de cerâmica exclusiva com a marca Café Marangoni, perfeita para saborear o seu café em casa.", price: 29.9, image: "imagem_representacao_Canecas_personalizadas.jpg" },
+            { id: "cafe-moido", name: "Café moído · 250 g", description: "Café moído para facilitar o preparo no dia a dia.", price: 34.9, image: "imagem_representacao_cafe_muido.jpg" },
+            { id: "capsulas-cafe", name: "Cápsulas de café · caixa", description: "Cápsulas práticas para uma xícara rápida.", price: 29.9, image: "imagem_representacao_Capsula_cafe.jpg" }
         ]
     }
 ];
@@ -129,27 +129,30 @@ function renderCatalog() {
                 <p>${category.description}</p>
             </div>
             <div class="catalog-products-grid">
-                ${category.products.map((product) => `
-                    <article class="catalog-product">
-                        <div class="catalog-product__image-wrap">
-                            <img class="catalog-product__image"
-                                 src="${productImageRoot}${category.image}"
-                                 alt="Imagem ilustrativa de ${product.name}"
-                                 loading="lazy">
-                        </div>
-                        <div class="catalog-product__body">
-                            <span class="catalog-section__eyebrow">${category.title}</span>
-                            <h3>${product.name}</h3>
-                            <p>${product.description}</p>
-                            <div class="catalog-product__meta">
-                                <span class="catalog-product__price">${currency.format(product.price)}</span>
-                                <button class="catalog-add-button" type="button" data-add-product="${product.id}">
-                                    <i class="fa-solid fa-plus" aria-hidden="true"></i> Selecionar
-                                </button>
+                ${category.products.map((product) => {
+        const productImage = product.image ?? category.image;
+        return `
+                        <article class="catalog-product">
+                            <div class="catalog-product__image-wrap">
+                                <img class="catalog-product__image"
+                                     src="${productImageRoot}${productImage}"
+                                     alt="Imagem ilustrativa de ${product.name}"
+                                     loading="lazy">
                             </div>
-                        </div>
-                    </article>
-                `).join("")}
+                            <div class="catalog-product__body">
+                                <span class="catalog-section__eyebrow">${category.title}</span>
+                                <h3>${product.name}</h3>
+                                <p>${product.description}</p>
+                                <div class="catalog-product__meta">
+                                    <span class="catalog-product__price">${currency.format(product.price)}</span>
+                                    <button class="catalog-add-button" type="button" data-add-product="${product.id}">
+                                        <i class="fa-solid fa-plus" aria-hidden="true"></i> Selecionar
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    `;
+    }).join("")}
             </div>
         </section>
     `).join("");
@@ -277,9 +280,9 @@ function renderOrderHistory() {
                         <span class="status status--processing">Demonstração local</span>
                     </div>
                     <p>${order.items
-                        .filter((item) => item && findProduct(item.id) && Number.isInteger(item.quantity) && item.quantity > 0)
-                        .map((item) => `${item.quantity} × ${findProduct(item.id).name}`)
-                        .join(" + ")}</p>
+                .filter((item) => item && findProduct(item.id) && Number.isInteger(item.quantity) && item.quantity > 0)
+                .map((item) => `${item.quantity} × ${findProduct(item.id).name}`)
+                .join(" + ")}</p>
                     <small>${escapeHtml(order.fulfillmentLabel)} · ${currency.format(order.total)} · ${escapeHtml(order.createdAt)}</small>
                 </div>
             </article>
