@@ -72,10 +72,7 @@ const catalog = [
         description: "Leve um pouco da experiência Café Marangoni para casa.",
         image: "imagem_representacao_Latte_Caramelo.jpg",
         products: [
-            { id: "Canecas-personalizadas", name: "Canecas personalizadas da nossa cafeteria· 350 ml", 
-                description: "Caneca de cerâmica exclusiva com a marca Café Marangoni, perfeita para saborear o seu café em casa.", 
-                price: 29.9, image: "imagem_representacao_Canecas_personalizadas.jpg" },
-
+            { id: "Canecas-personalizadas", name: "Canecas personalizadas da nossa cafeteria· 350 ml", description: "Caneca de cerâmica exclusiva com a marca Café Marangoni, perfeita para saborear o seu café em casa.", price: 29.9, image: "imagem_representacao_Canecas_personalizadas.jpg" },
             { id: "cafe-moido", name: "Café moído · 250 g", description: "Café moído para facilitar o preparo no dia a dia.", price: 34.9, image: "imagem_representacao_cafe_muido.jpg" },
             { id: "capsulas-cafe", name: "Cápsulas de café · caixa", description: "Cápsulas práticas para uma xícara rápida.", price: 29.9, image: "imagem_representacao_Capsula_cafe.jpg" }
         ]
