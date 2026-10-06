@@ -5,7 +5,7 @@
     --bg: #f5efe9;
     --bg-strong: #f0e3d7;
     --panel: #fffdfb;
-    --primary: #27170f;
+    --primary: #693e28;
     --primary-soft: #4d3328;
     --secondary: #8a5d3e;
     --accent: #d9b38b;
@@ -553,7 +553,7 @@ button:disabled {
 
 .highlights-strip {
     background: linear-gradient(180deg, #f7efe7 0%, #f3e7dc 100%);
-    padding: 1.5rem 0 0;
+    padding: 1.5rem 0 1.5rem;
 }
 
 .highlights-strip__grid {
@@ -701,6 +701,7 @@ button:disabled {
     background: rgba(255, 255, 255, 0.75);
     border: 1px solid rgba(125, 88, 62, 0.08);
     border-radius: 24px;
+    
     padding: 2rem 1.5rem;
     text-align: center;
     box-shadow: 0 12px 30px rgba(86, 62, 44, 0.08);
@@ -737,6 +738,13 @@ button:disabled {
     gap: 1.5rem;
     margin-bottom: 2.5rem;
 }
+
+
+.menu .feature-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-bottom: 2.5rem; /* espaço antes do bloco "Quer experimentar mais?" */
+}
+
 
 .menu-card {
     position: relative;
@@ -3591,10 +3599,6 @@ body.landing-page {
         transition: none;
     }
 }
-
-
-
-
 
 
 
