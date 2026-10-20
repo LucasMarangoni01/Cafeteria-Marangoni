@@ -1,5 +1,5 @@
 const productImageRoot = document.querySelector("[data-asset-root]")?.dataset.assetRoot ?? "../static/img/";
-const catalog = [
+let catalog = [
     {
         id: "bebidas-quentes",
         title: "Bebidas quentes",
@@ -316,36 +316,7 @@ function setupCheckout() {
         if (button) updateCart(button.dataset.cartChange, Number(button.dataset.change));
     });
 
-    form.addEventListener("submit", (event) => {
-        event.preventDefault();
-        const cart = readStoredList(storageKeys.cart);
-        const items = cart.filter((entry) => findProduct(entry.id) && entry.quantity > 0);
-        if (!items.length) return;
 
-        const data = new FormData(form);
-        const modeLabels = { balcao: "Retirada no balcão", mesa: `Mesa ${data.get("tableNumber")}`, entrega: "Delivery" };
-        const subtotal = items.reduce((sum, entry) => sum + findProduct(entry.id).price * entry.quantity, 0);
-        const total = subtotal + (data.get("fulfillment") === "entrega" ? 8 : 0);
-        const orders = readStoredList(storageKeys.orders);
-        const order = {
-            number: `#${String(orders.length + 1).padStart(4, "0")}`,
-            customerName: data.get("customerName"),
-            items,
-            fulfillmentLabel: modeLabels[data.get("fulfillment")],
-            total,
-            createdAt: new Intl.DateTimeFormat("pt-BR", { dateStyle: "short", timeStyle: "short" }).format(new Date())
-        };
-
-        orders.unshift(order);
-        localStorage.setItem(storageKeys.orders, JSON.stringify(orders));
-        localStorage.setItem(storageKeys.cart, "[]");
-        form.reset();
-        fulfillment.dispatchEvent(new Event("change"));
-        feedback.textContent = "Prévia salva neste navegador. Nenhum pedido foi enviado à cafeteria.";
-        feedback.hidden = false;
-        renderOrderCart();
-        renderOrderHistory();
-    });
 }
 
 function setupDemoAccount() {
@@ -430,7 +401,5 @@ document.querySelectorAll("[data-nav-toggle]").forEach((button) => {
 
 renderCatalog();
 renderOrderCart();
-renderOrderHistory();
 setupCheckout();
-setupDemoAccount();
-setupAdminDemo();
+
