@@ -167,6 +167,7 @@
                         </p>
 
                     </div>
+                    <p class="auth-demo-note" data-state="error" th:if="${param.erro}">Usuário ou senha inválidos.</p>
 
                     <form class="login-form" th:action="@{/login}" method="post">
 
